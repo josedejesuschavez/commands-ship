@@ -6,8 +6,7 @@ echo "---Installing configs ---"
 sudo apt update
 sudo apt install python3-pip -y
 pip3 install dotbot
-export PATH=/home/jchavez/.local/bin:$PATH
-dotbot -c symlinks/conf.yaml
+/home/jchavez/.local/bin/dotbot -c symlinks/conf.yaml
 sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
