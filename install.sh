@@ -6,4 +6,3 @@ echo "---Installing configs---"
 sudo apt update
 sudo apt install python3-pip -y
 pip3 install dotbot
-dotbot -c symlinks/conf.yaml
