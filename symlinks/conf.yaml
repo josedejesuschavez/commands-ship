@@ -1,0 +1,4 @@
+- clean: ['~']
+
+- link:
+    ~/.gitconfig: ../git/.gitconfig
