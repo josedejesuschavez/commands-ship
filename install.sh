@@ -12,5 +12,4 @@ sudo apt install zsh -y
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 chsh -s $(which zsh)
-
-/home/jchavez/.local/bin/dotbot -c /home/jchavez/.dotfiles/symlinks/conf.yaml
+~/.local/bin/dotbot -c ~/.dotfiles/symlinks/conf.yaml
