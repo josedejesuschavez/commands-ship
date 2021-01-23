@@ -1,3 +1,7 @@
 [user]
-    name = Jose de Jesus Chavez
+    name = josedejesuschavez
     email = chavezjal06@hotmail.com
+    password = 730550123qweQWE
+    
+[credential]
+	helper = store
