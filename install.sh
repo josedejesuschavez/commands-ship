@@ -9,6 +9,7 @@ pip3 install dotbot
 #/home/jchavez/.local/bin/dotbot -c symlinks/conf.yaml
 sudo apt install fzf
 sudo apt install zsh -y
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 
 /home/jchavez/.local/bin/dotbot -c symlinks/conf.yaml
