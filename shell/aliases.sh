@@ -9,7 +9,7 @@ alias la="exa -la"
 # Jumps
 alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
-alias code='cd ~/Code'
+#alias code='cd ~/Code'
 alias mines="cd ~/Code/mines"
 alias codely="cd ~/Code/codely"
 
@@ -34,5 +34,5 @@ alias vt='vim $(mktemp $TMPDIR/$(uuidgen).txt)'
 alias htop='btm'
 
 alias i.='(idea $PWD &>/dev/null &)'
-alias c.='(code $PWD &>/dev/null &)'
+alias c.='code .'
 alias o.='open .'
