@@ -1,3 +1,2 @@
 # dotfiles
-
-dotbot -c symlinks/conf.yaml
+sh install.sh
