@@ -1,0 +1,1 @@
+export DOTFILES_PATH="/home/jchavez/.dotfiles"
