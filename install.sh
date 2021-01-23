@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "---Installing configs---"
+echo "---Installing configs ---"
 
 #echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
 sudo apt update
