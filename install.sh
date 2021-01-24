@@ -13,4 +13,4 @@ sudo apt install zsh -y
 curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 chsh -s $(which zsh)
 ~/.local/bin/dotbot -c ~/.dotfiles/symlinks/conf.yaml
-zimfw install to install
+zimfw uninstall & zimfw install
