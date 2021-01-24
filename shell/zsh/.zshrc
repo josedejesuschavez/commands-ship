@@ -122,4 +122,3 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-source "$DOTFILES_PATH/shell/init.sh"
