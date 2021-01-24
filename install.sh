@@ -6,10 +6,12 @@ echo "---Installing configs ---"
 sudo apt update
 sudo apt install python3-pip -y
 pip3 install dotbot
-#/home/jchavez/.local/bin/dotbot -c symlinks/conf.yaml
+$HOME/.local/bin/dotbot -c $HOME/.dotfiles/symlinks/conf.yaml
 sudo apt install fzf
 sudo apt install zsh -y
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+#curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+
 chsh -s $(which zsh)
-$HOME/.local/bin/dotbot -c $HOME/.dotfiles/symlinks/conf.yaml
+wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+zsh ~/.zim/zimfw.zsh install
