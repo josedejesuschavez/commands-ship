@@ -6,3 +6,4 @@ git clone https://github.com/josedejesuschavez/dotfiles.git $HOME/.dotfiles && s
 - docker --version
 - gs
 - reverse-search
+- echo $DOTFILES_PATH
