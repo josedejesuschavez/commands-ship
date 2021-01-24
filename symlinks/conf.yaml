@@ -6,8 +6,8 @@
         force: true
       
 - link:
-    ~/.gitconfig: $DOTFILES_PATH/git/.gitconfig
-    ~/.zimrc: $DOTFILES_PATH/shell/zsh/.zimrc
-    ~/.zlogin: $DOTFILES_PATH/shell/zsh/.zlogin
-    ~/.zshenv: $DOTFILES_PATH/shell/zsh/.zshenv
-    ~/.zshrc: $DOTFILES_PATH/shell/zsh/.zshrc
+    ~/.gitconfig: git/.gitconfig
+    ~/.zimrc: shell/zsh/.zimrc
+    ~/.zlogin: shell/zsh/.zlogin
+    ~/.zshenv: shell/zsh/.zshenv
+    ~/.zshrc: shell/zsh/.zshrc
