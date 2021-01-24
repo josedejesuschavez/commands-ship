@@ -3,3 +3,5 @@ git clone https://github.com/josedejesuschavez/dotfiles.git $HOME/.dotfiles && s
 
 # Tests
 - dotbot --version
+- docker --version
+- gs
