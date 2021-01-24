@@ -13,5 +13,6 @@ sudo apt install zsh -y
 #curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 
 chsh -s $(which zsh)
+mkdir $HOME/.zim
 wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 zsh ~/.zim/zimfw.zsh install
