@@ -7,4 +7,4 @@
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 # }}} End configuration added by Zim install
 
-export DOTFILES_PATH="/home/jchavez/.dotfiles"
+export DOTFILES_PATH="$HOME/.dotfiles"
