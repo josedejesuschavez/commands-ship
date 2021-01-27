@@ -1,0 +1,61 @@
+#!/bin/bash
+
+total_is() {
+  total_expected="${1}"
+  arguments="${@:2}"
+
+  total_arguments=0
+  for argument in ${arguments[*]}; do
+    total_arguments=$((total_arguments + 1))
+  done
+
+  [[ $total_arguments -eq $total_expected ]]
+}
+
+fzf_prompt() {
+  local paths="$1"
+
+  script="$(
+    echo "$paths" |
+      fzf \
+        --height 100% \
+        --preview 'echo ${} | cut -d" " -f 2'
+  )"
+
+  printf "%s" "$script"
+  read -r args
+
+  sh $script $args
+}
+
+list_scripts_path() {
+  dotfiles_contexts=$(find "$DOTFILES_PATH/scripts" -maxdepth 2 -type f)
+
+  printf "%s\n" "$dotfiles_contexts" | sort -u
+}
+
+if total_is 0 "$@"; then
+    echo "No argumentos"
+    fzf_prompt "$(list_scripts_path)"
+elif total_is 1 "$@"; then
+    echo "1 argumentos"
+    echo "${1}"
+    fzf_prompt "$(list_scripts_path | grep "$1")"
+else
+    context="$1"
+    script="$2"
+    
+    shift 2
+    
+    "${DOTFILES_PATH}/scripts/${context}/${script}" "$@"
+fi
+
+argument1="${1}"
+argument2="${@:2}"
+
+#echo ${argument1}
+#echo ${argument2}
+
+#for argument in ${argument2[*]}; do
+    #echo ${argument}
+  #done
