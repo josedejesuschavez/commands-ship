@@ -17,15 +17,18 @@ fzf_prompt() {
 
   script="$(
     echo "$paths" |
+      xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
       fzf \
         --height 100% \
-        --preview 'echo ${} | cut -d" " -f 2'
+        --layout=reverse \
+        --preview '"example" $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2)'
   )"
 
-  printf "%s" "$script"
+  printf "${DOTFILES_PATH}/scripts/%s/%s" "$(echo ${script} | cut -d" " -f 1)" ""$(echo ${script} | cut -d" " -f 2)""
   read -r args
 
-  sh $script $args
+
+  "${DOTFILES_PATH}/scripts/$(echo ${script} | cut -d" " -f 1)/$(echo ${script} | cut -d" " -f 2)"
 }
 
 list_scripts_path() {
@@ -35,10 +38,8 @@ list_scripts_path() {
 }
 
 if total_is 0 "$@"; then
-    echo "No argumentos"
     fzf_prompt "$(list_scripts_path)"
 elif total_is 1 "$@"; then
-    echo "1 argumentos"
     echo "${1}"
     fzf_prompt "$(list_scripts_path | grep "$1")"
 else
