@@ -27,8 +27,7 @@ fzf_prompt() {
   printf "${DOTFILES_PATH}/scripts/%s/%s" "$(echo ${script} | cut -d" " -f 1)" ""$(echo ${script} | cut -d" " -f 2)""
   read -r args
 
-
-  "${DOTFILES_PATH}/scripts/$(echo ${script} | cut -d" " -f 1)/$(echo ${script} | cut -d" " -f 2)"
+  "${DOTFILES_PATH}/scripts/$(echo ${script} | cut -d" " -f 1)/$(echo ${script} | cut -d" " -f 2)" $args
 }
 
 list_scripts_path() {

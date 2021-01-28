@@ -1,0 +1,5 @@
+#!/bin/bash
+
+args="${1}"
+
+docker logs $args
