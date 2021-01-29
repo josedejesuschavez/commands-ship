@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Docker"
+echo ""
+echo "Description:"
+echo "Run a command in a new container in mode interactive"
+echo ""
+echo ""
+echo ""
+echo "Params:"
+echo "- Image name"

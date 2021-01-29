@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Docker"
+echo ""
+echo "Description:"
+echo "Fetch the logs of a container"
+echo ""
+echo ""
+echo ""
+echo "Params:"
+echo "- Container ID"
