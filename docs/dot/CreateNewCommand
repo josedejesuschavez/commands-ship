@@ -1,3 +1,12 @@
 #!/bin/bash
 
-echo "Hola mundo"
+echo "dot"
+echo ""
+echo "Description:"
+echo "Create new command"
+echo ""
+echo ""
+echo ""
+echo "Params:"
+echo "- Module"
+echo "- Command name"
