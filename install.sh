@@ -12,3 +12,4 @@ wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/down
 zsh ~/.zim/zimfw.zsh install
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 chmod -R 777 $HOME/.dotfiles/scripts
+chmod -R 777 $HOME/.dotfiles/docs
