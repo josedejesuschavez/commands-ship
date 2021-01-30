@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "vim"
+echo ""
+echo "Description:"
+echo "MoveInFiles"
+echo ""
+echo "gd       -> will take you to the local declaration"
+echo "gf       -> open in the same window ('goto file')"
+echo "Ctrl + o -> go to older position in jump list"
+echo "Ctrl + i -> go to newer position in jump list"

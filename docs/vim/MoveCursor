@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "vim"
+echo ""
+echo "Description:"
+echo "Move cursor"
+echo ""
+echo "h -> move curso left"
+echo "j -> move curso down"
+echo "k -> move curso up"
+echo "l -> move curso right"
+echo "w -> jump forwards to the start of a word"
+echo "e -> jump forwards to the end of a word"
+echo "b -> jump backwards to the start of a word"

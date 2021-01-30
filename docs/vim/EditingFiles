@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "vim"
+echo ""
+echo "Description:"
+echo "Editing files"
+echo ""
+echo "u        -> undo"
+echo "Ctrl + r -> redo"
+echo "p        -> put (paste) the clipboard after cursor"
+echo "P        -> put (paster) before cursor"
+echo "r        -> replace a single character"
+echo "cw       -> change (replace) to the end of the word"
+echo "ciw      -> change (replace) entire word"
