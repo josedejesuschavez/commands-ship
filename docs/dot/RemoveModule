@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "dot"
+echo ""
+echo "Description:"
+echo "RemoveModule"
+echo ""
+echo ""
+echo ""
+echo "Params:"
+echo "- Param 1"

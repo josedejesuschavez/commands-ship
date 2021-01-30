@@ -3,8 +3,11 @@
 module="${1}"
 command="${2}"
 
-mkdir "${DOTFILES_PATH}/scripts/$module"
-mkdir "${DOTFILES_PATH}/docs/$module"
+if [ ! -d "${DOTFILES_PATH}/scripts/$module" ];
+then
+    mkdir "${DOTFILES_PATH}/scripts/$module"
+    mkdir "${DOTFILES_PATH}/docs/$module"
+fi
 
 echo "#!/bin/bash" > "${DOTFILES_PATH}/scripts/$module/$command"
 echo "" >> "${DOTFILES_PATH}/scripts/$module/$command"
