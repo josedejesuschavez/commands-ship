@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "vim"
+echo ""
+echo "Description:"
+echo "SearchAndReplace"
+echo ""
+echo ":s/foo/bar/g   -> Change each 'foo' to 'bar' in the current line"
+echo ":s/foo/bar     -> Change first 'foo' to 'bar' in the current line"
+echo ":%s/foo/bar/g  -> Change each 'foo' to 'bar' in the current file"
+echo ":%s/foo/bar/gc -> Change each 'foo' to 'bar' in the current file,"
+echo "                  but ask for confirmation first"

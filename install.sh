@@ -10,6 +10,8 @@ chsh -s $(which zsh)
 mkdir $HOME/.zim
 wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 zsh ~/.zim/zimfw.zsh install
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 chmod -R 777 $HOME/.dotfiles/scripts
 chmod -R 777 $HOME/.dotfiles/docs
