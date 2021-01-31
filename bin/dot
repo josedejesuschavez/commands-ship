@@ -24,7 +24,8 @@ fzf_prompt() {
         --preview '"$DOTFILES_PATH/docs/$(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)"'
   )"
 
-  printf "%s" "$(echo ${script} | cut -d" " -f 2)"
+  printf "%s " "$(echo ${script} | cut -d" " -f 2)"
+  cat example | fzf
   read -r args
 
   "${DOTFILES_PATH}/scripts/$(echo ${script} | cut -d" " -f 1)/$(echo ${script} | cut -d" " -f 2)" $args
