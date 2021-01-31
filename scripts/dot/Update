@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Updating dot"
+
+cd $DOTFILES_PATH
+
+git pull origin master
+
+chmod -R 777 $HOME/.dotfiles/scripts
+chmod -R 777 $HOME/.dotfiles/docs
+
+$HOME/.local/bin/dotbot -c $HOME/.dotfiles/symlinks/conf.yaml -d $HOME/.dotfiles
