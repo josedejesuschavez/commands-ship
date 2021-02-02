@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo "vim"
-echo ""
-echo "Description:"
-echo "Mode visual"
-echo ""
-echo "v -> change to mode visual"
-echo "y -> yank (copy) market text"
