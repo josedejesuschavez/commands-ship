@@ -50,13 +50,3 @@ else
     
     "${DOTFILES_PATH}/scripts/${context}/${script}" "$@"
 fi
-
-argument1="${1}"
-argument2="${@:2}"
-
-#echo ${argument1}
-#echo ${argument2}
-
-#for argument in ${argument2[*]}; do
-    #echo ${argument}
-  #done

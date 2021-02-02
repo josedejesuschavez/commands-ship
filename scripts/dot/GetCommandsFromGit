@@ -1,0 +1,25 @@
+#!/bin/bash
+
+repoGit=${1}
+branch=${2}
+folderCustomCommands=$HOME/.customCommands
+
+rm -rf $folderCustomCommands
+
+git clone $repoGit $folderCustomCommands
+cd $folderCustomCommands
+
+git checkout $branch
+
+paths=$(ls $DOTFILES_PATH/scripts)
+scriptdot="dot"
+
+for folder in ${paths}; do
+    if [ $folder != $scriptdot ]; then
+    	rm -rf $DOTFILES_PATH/scripts/$folder
+	rm -rf $DOTFILES_PATH/docs/$folder
+    fi
+done
+
+cp -R scripts $DOTFILES_PATH
+cp -R docs $DOTFILES_PATH
