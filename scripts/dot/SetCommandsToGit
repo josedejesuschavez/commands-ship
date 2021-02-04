@@ -17,3 +17,9 @@ for folder in ${paths}; do
 	cp -R $DOTFILES_PATH/docs/$folder $folderCustomCommands/docs/$folder
     fi
 done
+
+cd $folderCustomCommands
+
+git add .
+git commit -m 'Update Commands'
+git push origin HEAD

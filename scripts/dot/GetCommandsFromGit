@@ -2,6 +2,7 @@
 
 repoGit=${1}
 branch=${2}
+override=${3}
 folderCustomCommands=$HOME/.customCommands
 
 rm -rf $folderCustomCommands
@@ -16,10 +17,14 @@ scriptdot="dot"
 
 for folder in ${paths}; do
     if [ $folder != $scriptdot ]; then
-    	rm -rf $DOTFILES_PATH/scripts/$folder
-	rm -rf $DOTFILES_PATH/docs/$folder
+	if [ $override == "true" ]; then
+	    rm -rf $DOTFILES_PATH/scripts/$folder
+	    rm -rf $DOTFILES_PATH/docs/$folder
+	fi
     fi
 done
 
-cp -R scripts $DOTFILES_PATH
-cp -R docs $DOTFILES_PATH
+if [ -d scripts ]; then
+    cp -R scripts $DOTFILES_PATH
+    cp -R docs $DOTFILES_PATH
+fi
