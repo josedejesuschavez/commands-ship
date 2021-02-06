@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "dot"
+echo ""
+echo "Description:"
+echo "ChangeCommandName"
+echo ""
+echo ""
+echo ""
+echo "Params:"
+echo "- Param 1"
