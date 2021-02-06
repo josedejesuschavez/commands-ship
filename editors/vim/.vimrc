@@ -9,7 +9,7 @@ set encoding=utf-8
 set showmatch
 set sw=4
 set relativenumber
-set noshowmode
+" set noshowmode
 
 call plug#begin('~/.vim/plugged')
 
@@ -20,6 +20,7 @@ Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
