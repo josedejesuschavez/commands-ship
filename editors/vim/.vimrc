@@ -26,7 +26,7 @@ call plug#end()
 
 " colorscheme gruvbox
 " let g:gruvbox_contrast_dark = 
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 
 let mapleader=" "
 
