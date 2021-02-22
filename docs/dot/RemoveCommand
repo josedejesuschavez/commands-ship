@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "dot"
-echo ""
-echo "Description:"
-echo "RemoveCommand"
-echo ""
-echo ""
-echo ""
-echo "Params:"
-echo "- Param 1"
+echo "
+dot
+
+Description:
+Remove command
+
+
+Params:
+- Module name
+- Command name
+"

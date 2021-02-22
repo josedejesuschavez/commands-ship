@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo "dot"
-echo ""
-echo "Description:"
-echo "Update to latest version"
+echo "
+dot
+
+Description:
+Update to latest version
+"

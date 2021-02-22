@@ -5,7 +5,9 @@ branch=${2}
 override=${3}
 folderCustomCommands=$HOME/.customCommands
 
-rm -rf $folderCustomCommands
+if [ -d "$folderCustomCommands" ]; then
+    rm -rf $folderCustomCommands
+fi
 
 git clone $repoGit $folderCustomCommands
 cd $folderCustomCommands

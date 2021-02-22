@@ -1,12 +1,13 @@
 #!/bin/bash
 
-echo "dot"
-echo ""
-echo "Description:"
-echo "Create new command"
-echo ""
-echo ""
-echo ""
-echo "Params:"
-echo "- Module"
-echo "- Command name"
+echo "
+dot
+
+Description:
+Create new command
+
+
+Params:
+- Module
+- Command name
+"

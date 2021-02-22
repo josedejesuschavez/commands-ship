@@ -1,11 +1,14 @@
 #!/bin/bash
 
-echo "dot"
-echo ""
-echo "Description:"
-echo "ChangeCommandName"
-echo ""
-echo ""
-echo ""
-echo "Params:"
-echo "- Param 1"
+echo "
+dot
+
+Description:
+Change command name
+
+
+Params:
+- Module
+- Old command
+- New command
+"

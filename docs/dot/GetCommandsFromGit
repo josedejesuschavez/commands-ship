@@ -1,6 +1,14 @@
 #!/bin/bash
 
-echo "dot"
-echo ""
-echo "Description:"
-echo "Get commands from git"
+echo "
+dot
+
+Description:
+Get commands from git
+
+
+Params:
+- Repo Git
+- Branch
+- Override
+"

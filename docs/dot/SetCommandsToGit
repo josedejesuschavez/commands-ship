@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo "dot"
-echo ""
-echo "Description:"
-echo "Set commands to Git"
+echo "
+dot
+
+Description:
+Set commands to git
+"
