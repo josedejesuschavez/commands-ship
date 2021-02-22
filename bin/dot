@@ -22,7 +22,7 @@ fzf_prompt() {
         --height 100% \
         --layout=reverse \
         --preview '"$DOTFILES_PATH/docs/$(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)"' \
-        --preview-window right:70
+        --preview-window right:80
   )"
 
   printf "%s " "$(echo ${script} | cut -d" " -f 2)"
