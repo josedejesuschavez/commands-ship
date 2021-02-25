@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo "
-dot
+echo "dot
 
 Description:
 Get commands from git
