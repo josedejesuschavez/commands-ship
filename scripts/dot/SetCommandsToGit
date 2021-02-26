@@ -20,6 +20,7 @@ done
 
 cd $folderCustomCommands
 
+git pull origin $(git rev-parse --abbrev-ref HEAD)
 git add .
 git commit -m 'Update Commands'
 git push origin HEAD
