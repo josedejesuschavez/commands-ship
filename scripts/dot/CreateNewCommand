@@ -21,7 +21,6 @@ echo "Description:" >> "${DOTFILES_PATH}/docs/$module/$command"
 echo "$command" >> "${DOTFILES_PATH}/docs/$module/$command"
 echo "" >> "${DOTFILES_PATH}/docs/$module/$command"
 echo "" >> "${DOTFILES_PATH}/docs/$module/$command"
-echo "" >> "${DOTFILES_PATH}/docs/$module/$command"
 echo "Params:" >> "${DOTFILES_PATH}/docs/$module/$command"
 echo "- Param 1\"" >> "${DOTFILES_PATH}/docs/$module/$command"
 

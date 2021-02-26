@@ -1,5 +1,5 @@
-from Infraestructure.Web.Flask.rest.${module_name}.get import example
-from Infraestructure.Web.Flask.register_blueprint import RegisterBlueprint
+from src.Infraestructure.Web.Flask.register_blueprint import RegisterBlueprint
+from src.Infraestructure.Web.Flask.rest.${module_name}.get import example
 
 
 class ${module_name}RegisterBlueprint(RegisterBlueprint):
