@@ -19,7 +19,7 @@ scriptdot="dot"
 
 for folder in ${paths}; do
     if [ $folder != $scriptdot ]; then
-	if [ $override == "true" ]; then
+	if [[ $override == "true" ]]; then
 	    rm -rf $DOTFILES_PATH/scripts/$folder
 	    rm -rf $DOTFILES_PATH/docs/$folder
 	fi
