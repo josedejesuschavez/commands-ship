@@ -6,6 +6,6 @@ alias ...="cd ../.."
 
 # Jumps
 alias ~="cd ~"
-alias workspace="/mnt/c/workspace"
+alias workspace="cd ~/workspace"
 
 alias c.='code .'
