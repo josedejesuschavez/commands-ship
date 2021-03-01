@@ -14,7 +14,7 @@ zsh ~/.zim/zimfw.zsh install
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
-brew install node
+/home/linuxbrew/.linuxbrew/bin/brew install node
 npm install -g tldr
 chmod -R 777 $HOME/.dotfiles/scripts
 chmod -R 777 $HOME/.dotfiles/docs
