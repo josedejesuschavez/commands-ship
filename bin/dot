@@ -1,6 +1,6 @@
 #!/bin/bash
 
-total_is() {
+function total_is() {
   total_expected="${1}"
   arguments="${@:2}"
 
@@ -12,28 +12,29 @@ total_is() {
   [[ $total_arguments -eq $total_expected ]]
 }
 
-fzf_prompt() {
-  local paths="$1"
+function fzf_prompt() {
+  #echo "$($1 | cut -d" " -f 2)"
+  local -r paths="$1"
 
   script="$(
-    echo "$paths" |
-      xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
+      echo "$paths" |
+      xargs -I _ sh -c 'echo "_"' |
       fzf \
         --height 100% \
         --layout=reverse \
-        --preview '"$DOTFILES_PATH/docs/$(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)"' \
+        --preview 'cat $DOTFILES_PATH/commands/$(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)/doc' \
         --preview-window right:80
   )"
 
   printf "%s " "$(echo ${script} | cut -d" " -f 2)"
   
   read -r args
-
-  "${DOTFILES_PATH}/scripts/$(echo ${script} | cut -d" " -f 1)/$(echo ${script} | cut -d" " -f 2)" $args
+  
+  "${DOTFILES_PATH}/commands/$(echo ${script} | cut -d" " -f 1)/$(echo ${script} | cut -d" " -f 2)/script" $args
 }
 
 list_scripts_path() {
-  dotfiles_contexts=$(find "$DOTFILES_PATH/scripts" -maxdepth 2 -type f)
+  dotfiles_contexts=$(find "$DOTFILES_PATH/commands" -maxdepth 2 -mindepth 2 -type d | awk -F '/' '{print $6" "$7}')
 
   printf "%s\n" "$dotfiles_contexts" | sort -u
 }
