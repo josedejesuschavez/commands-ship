@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Updating Commands"
+
 folder_Custom_Commands="$HOME/.customCommands"
 
 cd "$folder_Custom_Commands"
