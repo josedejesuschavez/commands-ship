@@ -1,0 +1,15 @@
+#!/bin/bash
+
+module="${1}"
+command="${2}"
+
+if [ -d "$DOTFILES_PATH/commands/$module" ]; then
+    if [ -f "$DOTFILES_PATH/commands/$module/$command" ]; then
+        rm -rf "$DOTFILES_PATH/commands/$module/$command"
+        echo "Command removed succesful!!"
+    else
+        echo "Command not exist!!"
+    fi
+else
+    echo "Module not exist!!"
+fi

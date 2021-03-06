@@ -11,3 +11,10 @@
 /scripts/ElasticSearch
 /docs/shell
 /scripts/shell
+
+/commands/docker
+/commands/vim
+/commands/DDD
+/commands/python
+/commands/ElasticSearch
+/commands/shell

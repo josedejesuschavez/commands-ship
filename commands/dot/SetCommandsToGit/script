@@ -1,0 +1,26 @@
+#!/bin/bash
+
+folderCustomCommands=$HOME/.customCommands
+
+paths=$(ls $DOTFILES_PATH/scripts)
+scriptdot="dot"
+
+rm -rf $folderCustomCommands/scripts
+rm -rf $folderCustomCommands/docs
+
+mkdir $folderCustomCommands/scripts
+mkdir $folderCustomCommands/docs
+
+for folder in ${paths}; do
+    if [ $folder != $scriptdot ]; then
+    	cp -R $DOTFILES_PATH/scripts/$folder $folderCustomCommands/scripts/$folder
+	cp -R $DOTFILES_PATH/docs/$folder $folderCustomCommands/docs/$folder
+    fi
+done
+
+cd $folderCustomCommands
+
+git pull origin $(git rev-parse --abbrev-ref HEAD)
+git add .
+git commit -m 'Update Commands'
+git push origin HEAD

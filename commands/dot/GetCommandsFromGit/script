@@ -1,0 +1,30 @@
+#!/bin/bash
+
+repoGit=${1}
+branch=${2}
+override=${3}
+folder_Custom_Commands="$HOME/.customCommands"
+
+if [ -d "$folder_Custom_Commands" ]; then
+    rm -rf "$folder_Custom_Commands"
+fi
+
+git clone $repoGit "$folder_Custom_Commands"
+cd "$folder_Custom_Commands"
+
+git checkout "$branch"
+
+paths=$(ls "$DOTFILES_PATH/scripts")
+script_dot="dot"
+
+for module in $(ls "$DOTFILES_PATH/commands"); do
+    if [ "$module" != "$script_dot" ]; then
+	    if [ "$override" == "true" ]; then
+	        rm -rf "$DOTFILES_PATH/commands/$module"
+	    fi
+    fi
+done
+
+if [ -d "$folder_Custom_Commands" ]; then
+    cp -R "folder_Custom_Commands" "$DOTFILES_PATH/commands"
+fi

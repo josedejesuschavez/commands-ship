@@ -1,12 +1,11 @@
-#!/bin/bash
+dot
 
-echo "dot
+Name:
+Create new command
 
 Description:
 Create new command
 
-
 Params:
 - Module
 - Command name
-"

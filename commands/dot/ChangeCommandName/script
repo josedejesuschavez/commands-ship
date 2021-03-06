@@ -1,0 +1,8 @@
+#!/bin/bash
+
+module=${1}
+oldCommand=${2}
+newCommand=${3}
+
+rm -rf "$DOTFILES_PATH/commands/$module/$newCommand"
+mv "$DOTFILES_PATH/commands/$module/$oldCommand" "$DOTFILES_PATH/commands/$module/$newCommand"
