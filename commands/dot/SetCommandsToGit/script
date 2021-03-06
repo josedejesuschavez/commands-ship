@@ -1,6 +1,6 @@
 #!/bin/bash
 
-folder_Custom_Commands="$HOME/.customCommands2"
+folder_Custom_Commands="$HOME/.customCommands"
 
 scriptdot="dot"
 
@@ -8,15 +8,12 @@ rm -rf "$folder_Custom_Commands/commands"
 
 mkdir "$folder_Custom_Commands/commands"
 
-for module in $(ls "$DOTFILES_PATH/scripts"); do
-    if [ "$module" != "$scriptdot" ]; then
-    	cp -R "$DOTFILES_PATH/commands/$module" "$folder_Custom_Commands/$module"
-    fi
-done
+cp -R "$DOTFILES_PATH/commands" "$folder_Custom_Commands"
+rm -rf "$folder_Custom_Commands/commands/dot"
 
 cd "$folder_Custom_Commands"
 
-git pull origin $(git rev-parse --abbrev-ref HEAD)
+git pull origin "$(git rev-parse --abbrev-ref HEAD)"
 git add .
 git commit -m 'Update Commands'
 git push origin HEAD
