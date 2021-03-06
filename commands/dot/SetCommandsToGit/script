@@ -1,24 +1,20 @@
 #!/bin/bash
 
-folderCustomCommands=$HOME/.customCommands
+folder_Custom_Commands="$HOME/.customCommands2"
 
-paths=$(ls $DOTFILES_PATH/scripts)
 scriptdot="dot"
 
-rm -rf $folderCustomCommands/scripts
-rm -rf $folderCustomCommands/docs
+rm -rf "$folder_Custom_Commands/commands"
 
-mkdir $folderCustomCommands/scripts
-mkdir $folderCustomCommands/docs
+mkdir "$folder_Custom_Commands/commands"
 
-for folder in ${paths}; do
-    if [ $folder != $scriptdot ]; then
-    	cp -R $DOTFILES_PATH/scripts/$folder $folderCustomCommands/scripts/$folder
-	cp -R $DOTFILES_PATH/docs/$folder $folderCustomCommands/docs/$folder
+for module in $(ls "$DOTFILES_PATH/scripts"); do
+    if [ "$module" != "$scriptdot" ]; then
+    	cp -R "$DOTFILES_PATH/commands/$module" "$folder_Custom_Commands/$module"
     fi
 done
 
-cd $folderCustomCommands
+cd "$folder_Custom_Commands"
 
 git pull origin $(git rev-parse --abbrev-ref HEAD)
 git add .

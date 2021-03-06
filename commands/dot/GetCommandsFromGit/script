@@ -3,7 +3,7 @@
 repoGit=${1}
 branch=${2}
 override=${3}
-folder_Custom_Commands="$HOME/.customCommands"
+folder_Custom_Commands="$HOME/.customCommands2"
 
 if [ -d "$folder_Custom_Commands" ]; then
     rm -rf "$folder_Custom_Commands"
@@ -26,5 +26,5 @@ for module in $(ls "$DOTFILES_PATH/commands"); do
 done
 
 if [ -d "$folder_Custom_Commands" ]; then
-    cp -R "folder_Custom_Commands" "$DOTFILES_PATH/commands"
+    cp -R "$folder_Custom_Commands" "$DOTFILES_PATH"
 fi
