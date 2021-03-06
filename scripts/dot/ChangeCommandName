@@ -1,8 +1,0 @@
-#!/bin/bash
-
-module=${1}
-oldCommand=${2}
-newCommand=${3}
-
-mv $DOTFILES_PATH/scripts/$module/$oldCommand $DOTFILES_PATH/scripts/$module/$newCommand 
-mv $DOTFILES_PATH/docs/$module/$oldCommand $DOTFILES_PATH/docs/$module/$newCommand 
