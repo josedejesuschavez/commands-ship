@@ -26,5 +26,5 @@ for module in $(ls "$DOTFILES_PATH/commands"); do
 done
 
 if [ -d "$folder_Custom_Commands" ]; then
-    cp -R "$folder_Custom_Commands" "$DOTFILES_PATH"
+    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH"
 fi
