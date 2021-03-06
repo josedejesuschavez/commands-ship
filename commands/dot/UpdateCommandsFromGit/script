@@ -1,0 +1,9 @@
+#!/bin/bash
+
+folder_Custom_Commands="$HOME/.customCommands"
+
+cd "$folder_Custom_Commands"
+
+git pull origin "$(git rev-parse --abbrev-ref HEAD)"
+
+cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH" 
