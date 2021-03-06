@@ -8,7 +8,7 @@ then
     mkdir "${DOTFILES_PATH}/commands/$module"
 fi
 
-cp -R "${DOTFILES_PATH}/commands/dot/CreateNewCommand2/code" "${DOTFILES_PATH}/commands/$module"
+cp -R "${DOTFILES_PATH}/commands/dot/CreateNewCommand/code" "${DOTFILES_PATH}/commands/$module"
 mv "${DOTFILES_PATH}/commands/$module/code" "${DOTFILES_PATH}/commands/$module/$command"
 sed -i 's/${module_name}/'$module'/g' "${DOTFILES_PATH}/commands/$module/$command/doc"
 sed -i 's/${command_name}/'$command'/g' "${DOTFILES_PATH}/commands/$module/$command/doc"
