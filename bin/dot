@@ -26,11 +26,21 @@ function fzf_prompt() {
         --preview-window right:80
   )"
 
-  printf "%s " "$(echo ${script} | cut -d" " -f 2)"
-  
+  command_selected="$script"
+  module_selected="$(echo $command_selected | cut -d" " -f 1)"
+  script_selected="$(echo $command_selected | cut -d" " -f 2)"
+
   read -r args
-  
-  "${DOTFILES_PATH}/commands/$(echo ${script} | cut -d" " -f 1)/$(echo ${script} | cut -d" " -f 2)/script" $args
+  #args=""
+
+  #for param in $(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params); do
+  #  echo "$param"
+  #  read -r param_arg
+#
+  #  args="$args $param_arg"
+  #done
+
+  "${DOTFILES_PATH}/commands/$module_selected/$script_selected/script"
 }
 
 list_scripts_path() {
