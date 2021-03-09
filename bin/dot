@@ -31,9 +31,15 @@ function fzf_prompt() {
   script_selected="$(echo $command_selected | cut -d" " -f 2)"
 
   args=""
-  echo "Insert parameters!!!"
 
-  for param in $(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params); do
+  params_readed=$(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params)
+
+  if [ ! "$params_readed" == "" ]; then
+    echo "Insert parameters!!!"
+  fi
+
+  for param in $params_readed; do
+    param="${param/_/ }"
     echo "$param:"
     read -r param_arg
     args="$args $param_arg"

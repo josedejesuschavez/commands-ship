@@ -8,4 +8,4 @@ cd "$folder_Custom_Commands"
 
 git pull origin "$(git rev-parse --abbrev-ref HEAD)"
 
-cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH" 
+cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH"
