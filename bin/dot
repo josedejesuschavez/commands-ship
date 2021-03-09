@@ -30,17 +30,16 @@ function fzf_prompt() {
   module_selected="$(echo $command_selected | cut -d" " -f 1)"
   script_selected="$(echo $command_selected | cut -d" " -f 2)"
 
-  read -r args
-  #args=""
+  args=""
+  echo "Insert parameters!!!"
 
-  #for param in $(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params); do
-  #  echo "$param"
-  #  read -r param_arg
-#
-  #  args="$args $param_arg"
-  #done
+  for param in $(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params); do
+    echo "$param:"
+    read -r param_arg
+    args="$args $param_arg"
+  done
 
-  "${DOTFILES_PATH}/commands/$module_selected/$script_selected/script"
+  "${DOTFILES_PATH}/commands/$module_selected/$script_selected/script" $args
 }
 
 list_scripts_path() {
