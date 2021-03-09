@@ -13,7 +13,6 @@ function total_is() {
 }
 
 function fzf_prompt() {
-  #echo "$($1 | cut -d" " -f 2)"
   local -r paths="$1"
 
   script="$(
