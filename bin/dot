@@ -12,6 +12,39 @@ function total_is() {
   [[ $total_arguments -eq $total_expected ]]
 }
 
+function read_params_in_file() {
+  module_selected="${1}"
+  script_selected="${2}"
+  number_line_request="${3}"
+
+  number_line=1
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if [ "$number_line_request" == "$number_line" ]; then
+      printf "%s" "$line"
+    fi
+    
+    number_line=$((number_line + 1))
+  done < "$DOTFILES_PATH/commands/$module_selected/$script_selected/params"
+}
+
+
+function read_param() {
+  param="${1}"
+  subcommand="${2}"
+  if [ "$subcommand" != "" ]; then
+    if [ "$subcommand" == "$param" ]; then
+      read -r param_arg
+    else
+      subcommand="${subcommand/\"/ }"
+      subcommand="${subcommand/\"/ }"
+      param_arg="$(eval $subcommand)"
+    fi
+    printf "%s" "$param_arg" 
+  fi
+  printf "%s" " "
+}
+
 function fzf_prompt() {
   local -r paths="$1"
 
@@ -37,13 +70,28 @@ function fzf_prompt() {
     echo "Insert parameters!!!"
   fi
 
-  for param in $params_readed; do
-    param="${param/_/ }"
-    echo "$param:"
-    read -r param_arg
-    args="$args $param_arg"
-  done
+  param_1="$(read_params_in_file "$module_selected" "$script_selected" "1")"
+  param_2="$(read_params_in_file "$module_selected" "$script_selected" "2")"
+  param_3="$(read_params_in_file "$module_selected" "$script_selected" "3")"
+  param_4="$(read_params_in_file "$module_selected" "$script_selected" "4")"
+  param_5="$(read_params_in_file "$module_selected" "$script_selected" "5")"
+  param_6="$(read_params_in_file "$module_selected" "$script_selected" "6")"
 
+  subcommand_1="$(echo $param_1 | cut -d"=" -f 2)"
+  subcommand_2="$(echo $param_2 | cut -d"=" -f 2)"
+  subcommand_3="$(echo $param_3 | cut -d"=" -f 2)"
+  subcommand_4="$(echo $param_4 | cut -d"=" -f 2)"
+  subcommand_5="$(echo $param_5 | cut -d"=" -f 2)"
+  subcommand_6="$(echo $param_6 | cut -d"=" -f 2)"
+
+  param_arg1="$(read_param "$param_1" "$subcommand_1")"
+  param_arg2="$(read_param "$param_2" "$subcommand_2")"
+  param_arg3="$(read_param "$param_3" "$subcommand_3")"
+  param_arg4="$(read_param "$param_4" "$subcommand_4")"
+  param_arg5="$(read_param "$param_5" "$subcommand_5")"
+  param_arg6="$(read_param "$param_6" "$subcommand_6")"
+
+  args="$param_arg1 $param_arg2 $param_arg3 $param_arg4 $param_arg5 $param_arg6"
   "${DOTFILES_PATH}/commands/$module_selected/$script_selected/script" $args
 }
 
