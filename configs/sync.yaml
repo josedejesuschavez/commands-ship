@@ -11,6 +11,6 @@
       stderr: false                         # ignore stderr of rsync process
 
 - sync:
-    ~/workspace:
-       path: '/mnt/c/workspace'
+    /mnt/c/workspace:
+       path: '~/workspace'
        fmode: 400
