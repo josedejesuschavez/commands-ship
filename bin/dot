@@ -64,58 +64,60 @@ function fzf_prompt() {
 
   args=""
 
-  params_readed=$(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params)
+  if [ ! "$module_selected" == "" ]; then
+    params_readed=$(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params)
 
-  if [ ! "$params_readed" == "" ]; then
-    echo "Insert parameters!!!"
+    if [ ! "$params_readed" == "" ]; then
+      echo "Insert parameters!!!"
+    fi
+    
+    param_1="$(read_params_in_file "$module_selected" "$script_selected" "1")"
+    param_2="$(read_params_in_file "$module_selected" "$script_selected" "2")"
+    param_3="$(read_params_in_file "$module_selected" "$script_selected" "3")"
+    param_4="$(read_params_in_file "$module_selected" "$script_selected" "4")"
+    param_5="$(read_params_in_file "$module_selected" "$script_selected" "5")"
+    param_6="$(read_params_in_file "$module_selected" "$script_selected" "6")"
+
+    subcommand_1="$(echo $param_1 | cut -d"=" -f 2)"
+    subcommand_2="$(echo $param_2 | cut -d"=" -f 2)"
+    subcommand_3="$(echo $param_3 | cut -d"=" -f 2)"
+    subcommand_4="$(echo $param_4 | cut -d"=" -f 2)"
+    subcommand_5="$(echo $param_5 | cut -d"=" -f 2)"
+    subcommand_6="$(echo $param_6 | cut -d"=" -f 2)"
+
+    if [ "$param_1" != "" ]; then
+      echo "${param_1/_/ }"
+    fi
+    param_arg1="$(read_param "$param_1" "$subcommand_1")"
+
+    if [ "$param_2" != "" ]; then
+      echo "${param_2/_/ }"
+    fi
+    param_arg2="$(read_param "$param_2" "$subcommand_2")"
+
+    if [ "$param_3" != "" ]; then
+      echo "${param_3/_/ }"
+    fi
+    param_arg3="$(read_param "$param_3" "$subcommand_3")"
+
+    if [ "$param_4" != "" ]; then
+      echo "${param_4/_/ }"
+    fi
+    param_arg4="$(read_param "$param_4" "$subcommand_4")"
+
+    if [ "$param_5" != "" ]; then
+      echo "${param_5/_/ }"
+    fi
+    param_arg5="$(read_param "$param_5" "$subcommand_5")"
+
+    if [ "$param_6" != "" ]; then
+      echo "${param_6/_/ }"
+    fi
+    param_arg6="$(read_param "$param_6" "$subcommand_6")"
+
+    args="$param_arg1 $param_arg2 $param_arg3 $param_arg4 $param_arg5 $param_arg6"
+    "${DOTFILES_PATH}/commands/$module_selected/$script_selected/script" $args
   fi
-
-  param_1="$(read_params_in_file "$module_selected" "$script_selected" "1")"
-  param_2="$(read_params_in_file "$module_selected" "$script_selected" "2")"
-  param_3="$(read_params_in_file "$module_selected" "$script_selected" "3")"
-  param_4="$(read_params_in_file "$module_selected" "$script_selected" "4")"
-  param_5="$(read_params_in_file "$module_selected" "$script_selected" "5")"
-  param_6="$(read_params_in_file "$module_selected" "$script_selected" "6")"
-
-  subcommand_1="$(echo $param_1 | cut -d"=" -f 2)"
-  subcommand_2="$(echo $param_2 | cut -d"=" -f 2)"
-  subcommand_3="$(echo $param_3 | cut -d"=" -f 2)"
-  subcommand_4="$(echo $param_4 | cut -d"=" -f 2)"
-  subcommand_5="$(echo $param_5 | cut -d"=" -f 2)"
-  subcommand_6="$(echo $param_6 | cut -d"=" -f 2)"
-
-  if [ "$param_1" != "" ]; then
-    echo "${param_1/_/ }"
-  fi
-  param_arg1="$(read_param "$param_1" "$subcommand_1")"
-
-  if [ "$param_2" != "" ]; then
-    echo "${param_2/_/ }"
-  fi
-  param_arg2="$(read_param "$param_2" "$subcommand_2")"
-
-  if [ "$param_3" != "" ]; then
-    echo "${param_3/_/ }"
-  fi
-  param_arg3="$(read_param "$param_3" "$subcommand_3")"
-
-  if [ "$param_4" != "" ]; then
-    echo "${param_4/_/ }"
-  fi
-  param_arg4="$(read_param "$param_4" "$subcommand_4")"
-
-  if [ "$param_5" != "" ]; then
-    echo "${param_5/_/ }"
-  fi
-  param_arg5="$(read_param "$param_5" "$subcommand_5")"
-
-  if [ "$param_6" != "" ]; then
-    echo "${param_6/_/ }"
-  fi
-  param_arg6="$(read_param "$param_6" "$subcommand_6")"
-
-  args="$param_arg1 $param_arg2 $param_arg3 $param_arg4 $param_arg5 $param_arg6"
-  "${DOTFILES_PATH}/commands/$module_selected/$script_selected/script" $args
 }
 
 list_scripts_path() {
