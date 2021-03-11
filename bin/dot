@@ -125,15 +125,14 @@ list_scripts_path() {
 }
 
 if total_is 0 "$@"; then
-    fzf_prompt "$(list_scripts_path)"
+  fzf_prompt "$(list_scripts_path)"
 elif total_is 1 "$@"; then
-    echo "${1}"
-    fzf_prompt "$(list_scripts_path | grep "$1")"
+  fzf_prompt "$(list_scripts_path | grep "$1")"
 else
-    context="$1"
-    script="$2"
+  context="$1"
+  script="$2"
     
-    shift 2
+  shift 2
     
-    "${DOTFILES_PATH}/scripts/${context}/${script}" "$@"
+  "${DOTFILES_PATH}/commands/${context}/${script}" "$@"
 fi
