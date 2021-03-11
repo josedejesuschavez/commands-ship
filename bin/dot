@@ -70,7 +70,7 @@ function fzf_prompt() {
     if [ ! "$params_readed" == "" ]; then
       echo "Insert parameters!!!"
     fi
-    
+
     param_1="$(read_params_in_file "$module_selected" "$script_selected" "1")"
     param_2="$(read_params_in_file "$module_selected" "$script_selected" "2")"
     param_3="$(read_params_in_file "$module_selected" "$script_selected" "3")"
@@ -136,5 +136,5 @@ else
     
   shift 2
     
-  "${DOTFILES_PATH}/commands/${context}/${script}" "$@"
+  "${DOTFILES_PATH}/commands/${context}/${script}/script" "$@"
 fi
