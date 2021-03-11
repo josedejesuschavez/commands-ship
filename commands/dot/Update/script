@@ -8,4 +8,4 @@ git pull origin master
 
 chmod -R 777 "$DOTFILES_PATH/commands"
 
-"$HOME/.local/bin/dotbot" -c "$HOME/.dotfiles/symlinks/conf.yaml" -d "$HOME/.dotfiles"
+"$HOME/.local/bin/dotbot" -c "$HOME/.dotfiles/configs/symlinks.yaml" -d "$HOME/.dotfiles"

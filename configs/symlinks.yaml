@@ -12,4 +12,3 @@
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
     ~/.vimrc: editors/vim/.vimrc
-    ~/workspace: /mnt/c/workspace
