@@ -78,40 +78,52 @@ function fzf_prompt() {
     param_5="$(read_params_in_file "$module_selected" "$script_selected" "5")"
     param_6="$(read_params_in_file "$module_selected" "$script_selected" "6")"
 
-    subcommand_1="$(echo $param_1 | cut -d"=" -f 2)"
-    subcommand_2="$(echo $param_2 | cut -d"=" -f 2)"
-    subcommand_3="$(echo $param_3 | cut -d"=" -f 2)"
-    subcommand_4="$(echo $param_4 | cut -d"=" -f 2)"
-    subcommand_5="$(echo $param_5 | cut -d"=" -f 2)"
-    subcommand_6="$(echo $param_6 | cut -d"=" -f 2)"
+    subcommand_1="$(echo $param_1 | cut -d"=" -f 2-10)"
+    subcommand_2="$(echo $param_2 | cut -d"=" -f 2-10)"
+    subcommand_3="$(echo $param_3 | cut -d"=" -f 2-10)"
+    subcommand_4="$(echo $param_4 | cut -d"=" -f 2-10)"
+    subcommand_5="$(echo $param_5 | cut -d"=" -f 2-10)"
+    subcommand_6="$(echo $param_6 | cut -d"=" -f 2-10)"
 
     if [ "$param_1" != "" ]; then
-      echo "${param_1/_/ }"
+      param_1_label="${param_1/_/ }"
+      param_1_label="$(echo $param_1_label | cut -d"=" -f 1)"
+      echo "${param_1_label}"
     fi
     param_arg1="$(read_param "$param_1" "$subcommand_1")"
 
     if [ "$param_2" != "" ]; then
-      echo "${param_2/_/ }"
+      param_2_label="${param_2/_/ }"
+      param_2_label="$(echo $param_2_label | cut -d"=" -f 1)"
+      echo "${param_2_label}"
     fi
     param_arg2="$(read_param "$param_2" "$subcommand_2")"
 
     if [ "$param_3" != "" ]; then
-      echo "${param_3/_/ }"
+      param_3_label="${param_3/_/ }"
+      param_3_label="$(echo $param_3_label | cut -d"=" -f 1)"
+      echo "${param_3_label}"
     fi
     param_arg3="$(read_param "$param_3" "$subcommand_3")"
 
     if [ "$param_4" != "" ]; then
-      echo "${param_4/_/ }"
+      param_4_label="${param_4/_/ }"
+      param_4_label="$(echo $param_4_label | cut -d"=" -f 1)"
+      echo "${param_4_label}"
     fi
     param_arg4="$(read_param "$param_4" "$subcommand_4")"
 
     if [ "$param_5" != "" ]; then
-      echo "${param_5/_/ }"
+      param_5_label="${param_5/_/ }"
+      param_5_label="$(echo $param_5_label | cut -d"=" -f 1)"
+      echo "${param_5_label}"
     fi
     param_arg5="$(read_param "$param_5" "$subcommand_5")"
 
     if [ "$param_6" != "" ]; then
-      echo "${param_6/_/ }"
+      param_6_label="${param_6/_/ }"
+      param_6_label="$(echo $param_6_label | cut -d"=" -f 1)"
+      echo "${param_6_label}"
     fi
     param_arg6="$(read_param "$param_6" "$subcommand_6")"
 
