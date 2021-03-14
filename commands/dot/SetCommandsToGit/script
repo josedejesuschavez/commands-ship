@@ -9,6 +9,7 @@ rm -rf "$folder_Custom_Commands/commands"
 mkdir "$folder_Custom_Commands/commands"
 
 cp -R "$DOTFILES_PATH/commands" "$folder_Custom_Commands"
+cp -R "$DOTFILES_PATH/git" "$folder_Custom_Commands"
 rm -rf "$folder_Custom_Commands/commands/dot"
 
 cd "$folder_Custom_Commands"

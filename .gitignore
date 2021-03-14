@@ -1,16 +1,4 @@
-/docs/docker
-/scripts/docker
-/docs/vim
-/scripts/vim
-/docs/DDD
-/scripts/DDD
-/docs/python
-/scripts/python
-/docs/ElasticSearch
-/scripts/ElasticSearch
-/docs/shell
-/scripts/shell
-
+/git/.gitconfig
 /commands/docker
 /commands/vim
 /commands/DDD
