@@ -15,6 +15,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
 /home/linuxbrew/.linuxbrew/bin/brew install tldr
-/home/linuxbrew/.linuxbrew/bin/brew install node
+#/home/linuxbrew/.linuxbrew/bin/brew install node
 #/home/linuxbrew/.linuxbrew/bin/npm install -g tldr
 chmod -R 777 $HOME/.dotfiles/commands
