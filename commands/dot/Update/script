@@ -9,3 +9,16 @@ git pull origin master
 chmod -R 777 "$DOTFILES_PATH/commands"
 
 "$HOME/.local/bin/dotbot" -c "$HOME/.dotfiles/configs/symlinks.yaml" -d "$HOME/.dotfiles"
+
+cd "$DOTFILES_PATH"
+
+for file in $(git status --porcelain | cut -c4-); do
+    if [ ! "$file" == "git/.gitconfig" ]; then
+        if [ ! "$file" == "git/.gitignore_global" ]; then
+            git add "$file"
+        fi
+    fi
+done
+
+git commit -m 'Update Commands'
+git push origin HEAD
