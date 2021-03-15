@@ -1,5 +1,3 @@
-/git/.gitconfig
-/git/.gitignore_global
 /commands/docker
 /commands/vim
 /commands/DDD
