@@ -1,15 +1,15 @@
 #!/bin/bash
-
 module="${1}"
 command="${2}"
+repository="${3}"
 
-if [ ! -d "${DOTFILES_PATH}/commands/$module" ];
+if [ ! -d "${DOTFILES_PATH}/commands_custom/${repository}/commands/$module" ];
 then
-    mkdir "${DOTFILES_PATH}/commands/$module"
+    mkdir "${DOTFILES_PATH}/commands_custom/${repository}/commands/$module"
 fi
 
-cp -R "${DOTFILES_PATH}/commands/dot/CreateNewCommand/code" "${DOTFILES_PATH}/commands/$module"
-mv "${DOTFILES_PATH}/commands/$module/code" "${DOTFILES_PATH}/commands/$module/$command"
-sed -i 's/${module_name}/'$module'/g' "${DOTFILES_PATH}/commands/$module/$command/doc"
-sed -i 's/${command_name}/'$command'/g' "${DOTFILES_PATH}/commands/$module/$command/doc"
-chmod -R 777  "${DOTFILES_PATH}/commands"
+cp -R "${DOTFILES_PATH}/commands/dot/CreateNewCommand/code" "${DOTFILES_PATH}/commands_custom/${repository}/commands/$module"
+mv "${DOTFILES_PATH}/commands_custom/${repository}/commands/$module/code" "${DOTFILES_PATH}/commands_custom/${repository}/commands/$module/$command"
+sed -i 's/${module_name}/'$module'/g' "${DOTFILES_PATH}/commands_custom/${repository}/commands/$module/$command/doc"
+sed -i 's/${command_name}/'$command'/g' "${DOTFILES_PATH}/commands_custom/${repository}/commands/$module/$command/doc"
+chmod -R 777  "${DOTFILES_PATH}/commands_custom/${repository}/commands"

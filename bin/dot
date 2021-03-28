@@ -141,11 +141,10 @@ if total_is 0 "$@"; then
 elif total_is 1 "$@"; then
   fzf_prompt "$(list_scripts_path | grep "$1")"
 else
-  context="$1"
-  script="$2"
+  script="$1"
     
   shift 1
 
-  finded_script="$(find $DOTFILES_PATH -type d -name ChangeCommandName)"
-  #"$finded_script/script" "$@"
+  finded_script="$(find $DOTFILES_PATH -type d -name $script)"
+  "$finded_script/script" "$@"
 fi
