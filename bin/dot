@@ -133,7 +133,8 @@ list_scripts_path() {
   commands=$(find "$DOTFILES_PATH/commands" -maxdepth 2 -mindepth 2 -type d)
   commands_custom=$(find "$DOTFILES_PATH/commands_custom" -maxdepth 4 -mindepth 4 -type d)
 
-  printf "%s\n" "$commands $commands_custom" | sort -u
+  printf "%s\n" "$commands" | sort -u
+  printf "%s\n" "$commands_custom" | sort -u
 }
 
 if total_is 0 "$@"; then
