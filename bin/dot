@@ -13,9 +13,8 @@ function total_is() {
 }
 
 function read_params_in_file() {
-  module_selected="${1}"
-  script_selected="${2}"
-  number_line_request="${3}"
+  command_selected="${1}"
+  number_line_request="${2}"
 
   number_line=1
 
@@ -25,7 +24,7 @@ function read_params_in_file() {
     fi
     
     number_line=$((number_line + 1))
-  done < "$DOTFILES_PATH/commands/$module_selected/$script_selected/params"
+  done < "${command_selected}/params"
 }
 
 
@@ -54,29 +53,27 @@ function fzf_prompt() {
       fzf \
         --height 100% \
         --layout=reverse \
-        --preview 'cat $DOTFILES_PATH/commands/$(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)/doc' \
+        --preview 'cat $(echo {})/doc' \
         --preview-window right:80
   )"
 
   command_selected="$script"
-  module_selected="$(echo $command_selected | cut -d" " -f 1)"
-  script_selected="$(echo $command_selected | cut -d" " -f 2)"
 
   args=""
 
-  if [ ! "$module_selected" == "" ]; then
-    params_readed=$(cat ${DOTFILES_PATH}/commands/$module_selected/$script_selected/params)
+  if [ ! "$command_selected" == "" ]; then
+    params_readed=$(cat ${command_selected}/params)
 
     if [ ! "$params_readed" == "" ]; then
       echo "Insert parameters!!!"
     fi
 
-    param_1="$(read_params_in_file "$module_selected" "$script_selected" "1")"
-    param_2="$(read_params_in_file "$module_selected" "$script_selected" "2")"
-    param_3="$(read_params_in_file "$module_selected" "$script_selected" "3")"
-    param_4="$(read_params_in_file "$module_selected" "$script_selected" "4")"
-    param_5="$(read_params_in_file "$module_selected" "$script_selected" "5")"
-    param_6="$(read_params_in_file "$module_selected" "$script_selected" "6")"
+    param_1="$(read_params_in_file "$command_selected" "1")"
+    param_2="$(read_params_in_file "$command_selected" "2")"
+    param_3="$(read_params_in_file "$command_selected" "3")"
+    param_4="$(read_params_in_file "$command_selected" "4")"
+    param_5="$(read_params_in_file "$command_selected" "5")"
+    param_6="$(read_params_in_file "$command_selected" "6")"
 
     subcommand_1="$(echo $param_1 | cut -d"=" -f 2-10)"
     subcommand_2="$(echo $param_2 | cut -d"=" -f 2-10)"
@@ -128,14 +125,15 @@ function fzf_prompt() {
     param_arg6="$(read_param "$param_6" "$subcommand_6")"
 
     args="$param_arg1 $param_arg2 $param_arg3 $param_arg4 $param_arg5 $param_arg6"
-    "${DOTFILES_PATH}/commands/$module_selected/$script_selected/script" $args
+    "${command_selected}/script" $args
   fi
 }
 
 list_scripts_path() {
-  dotfiles_contexts=$(find "$DOTFILES_PATH/commands" -maxdepth 2 -mindepth 2 -type d | awk -F '/' '{print $6" "$7}')
+  commands=$(find "$DOTFILES_PATH/commands" -maxdepth 2 -mindepth 2 -type d)
+  commands_custom=$(find "$DOTFILES_PATH/commands_custom" -maxdepth 4 -mindepth 4 -type d)
 
-  printf "%s\n" "$dotfiles_contexts" | sort -u
+  printf "%s\n" "$commands $commands_custom" | sort -u
 }
 
 if total_is 0 "$@"; then
@@ -146,7 +144,8 @@ else
   context="$1"
   script="$2"
     
-  shift 2
-    
-  "${DOTFILES_PATH}/commands/${context}/${script}/script" "$@"
+  shift 1
+
+  finded_script="$(find $DOTFILES_PATH -type d -name ChangeCommandName)"
+  #"$finded_script/script" "$@"
 fi
