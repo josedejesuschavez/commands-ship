@@ -2,8 +2,9 @@
 
 repoGit=${1}
 branch=${2}
-override=${3}
-folder_Custom_Commands="$HOME/.customCommands"
+alias=${3}
+override=${4}
+folder_Custom_Commands="$HOME/.customCommands-$alias"
 
 if [ -d "$folder_Custom_Commands" ]; then
     rm -rf "$folder_Custom_Commands"
@@ -16,6 +17,8 @@ git checkout "$branch"
 
 script_dot="dot"
 
+rm -rf "$DOTFILES_PATH/$alias/commands/$module"
+
 for module in $(ls "$DOTFILES_PATH/commands"); do
     if [ "$module" != "$script_dot" ]; then
 	    if [ "$override" == "true" ]; then
@@ -25,7 +28,8 @@ for module in $(ls "$DOTFILES_PATH/commands"); do
 done
 
 if [ -d "$folder_Custom_Commands" ]; then
-    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH"
+    mkdir "$DOTFILES_PATH/$alias"
+    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/$alias"
     cp -R "$folder_Custom_Commands/git" "$DOTFILES_PATH"
     rm -rf "$folder_Custom_Commands/commands/dot"
 fi
