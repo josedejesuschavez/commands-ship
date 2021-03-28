@@ -17,19 +17,11 @@ git checkout "$branch"
 
 script_dot="dot"
 
-rm -rf "$DOTFILES_PATH/$alias/commands/$module"
-
-for module in $(ls "$DOTFILES_PATH/commands"); do
-    if [ "$module" != "$script_dot" ]; then
-	    if [ "$override" == "true" ]; then
-	        rm -rf "$DOTFILES_PATH/commands/$module"
-	    fi
-    fi
-done
+rm -rf "$DOTFILES_PATH/commands_custom/$alias"
 
 if [ -d "$folder_Custom_Commands" ]; then
-    mkdir "$DOTFILES_PATH/$alias"
-    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/$alias"
+    mkdir "$DOTFILES_PATH/commands_custom/$alias"
+    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$alias"
     cp -R "$folder_Custom_Commands/git" "$DOTFILES_PATH"
     rm -rf "$folder_Custom_Commands/commands/dot"
 fi
