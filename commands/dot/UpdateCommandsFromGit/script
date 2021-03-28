@@ -1,12 +1,12 @@
 #!/bin/bash
 
+repository="${1}"
+
 echo "Updating Commands"
 
-folder_Custom_Commands="$HOME/.customCommands"
-
+folder_Custom_Commands="/home/jchavez/.customCommands-$repository"
 cd "$folder_Custom_Commands"
 
 git pull origin "$(git rev-parse --abbrev-ref HEAD)"
-
-cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH"
+cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$repository"
 cp -R "$folder_Custom_Commands/git" "$DOTFILES_PATH"
