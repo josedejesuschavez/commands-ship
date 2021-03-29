@@ -5,6 +5,8 @@
 * [Instalacion](#Instalación)
 * Prerequisitos
     * [Debian](#prerequisitos-debian)
+* Repositorios Third Party
+    * [Jose de Jesus Chavez](#Instalación)
 
 ## Instalación:
 `git clone https://github.com/josedejesuschavez/commands-ship.git $HOME/.commands-ship`
