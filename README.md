@@ -6,7 +6,8 @@
 * Prerequisitos
     * [Debian](#prerequisitos-debian)
 * Repositorios Third Party
-    * [Jose de Jesus Chavez]: https://github.com/josedejesuschavez/commands-public
+    * [Jose de Jesus Chavez][josedejesuschavezrepo]
+    * [josedejesuschavezrepo]: https://github.com/josedejesuschavez/commands-public
 ## Instalación:
 `git clone https://github.com/josedejesuschavez/commands-ship.git $HOME/.commands-ship`
 
