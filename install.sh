@@ -28,10 +28,10 @@ if [ ! -d "$HOME/.zim" ]; then
 	zsh ~/.zim/zimfw.zsh install
 fi
 
-if ! [ -x "$(command -v brew)" ]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  /home/linuxbrew/.linuxbrew/bin/brew install tldr
-fi
+#if ! [ -x "$(command -v brew)" ]; then
+#  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#  /home/linuxbrew/.linuxbrew/bin/brew install tldr
+#fi
 
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
