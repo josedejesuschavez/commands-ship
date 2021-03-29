@@ -1,20 +1,42 @@
 #!/bin/bash
 
 echo "---Installing configs ---"
-sudo apt update
-sudo apt install python3-pip -y
-pip3 install dotbot
-$HOME/.local/bin/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
-sudo apt install fzf zsh -y
-chsh -s $(which zsh)
-mkdir $HOME/.zim
-wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-zsh ~/.zim/zimfw.zsh install
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +'PlugInstall --sync' +qa
-/home/linuxbrew/.linuxbrew/bin/brew install tldr
-#/home/linuxbrew/.linuxbrew/bin/brew install node
-#/home/linuxbrew/.linuxbrew/bin/npm install -g tldr
 chmod -R 777 $HOME/.dotfiles/commands
+sudo apt update
+if ! [ -x "$(command -v pip3)" ]; then
+  sudo apt install python3-pip -y
+fi
+if ! [ -x "$(command -v dotbot)" ]; then
+  pip3 install dotbot
+fi
+
+$HOME/.local/bin/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
+
+if ! [ -x "$(command -v fzf)" ]; then
+  sudo apt install fzf
+fi
+
+if ! [ -x "$(command -v zsh)" ]; then
+  sudo apt install zsh
+fi
+
+chsh -s $(which zsh)
+
+if [ ! -d "$HOME/.zim" ]; then
+	mkdir $HOME/.zim
+	wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+	zsh ~/.zim/zimfw.zsh install
+fi
+
+if ! [ -x "$(command -v brew)" ]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /home/linuxbrew/.linuxbrew/bin/brew install tldr
+fi
+
+
+#curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+#	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#vim +'PlugInstall --sync' +qa
+
+
+#/home/linuxbrew/.linuxbrew/bin/brew install node
