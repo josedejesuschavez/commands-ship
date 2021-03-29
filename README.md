@@ -5,7 +5,7 @@
 
 `sh $HOME/.commands-ship/install.sh`
 
-En varias ocasiones pedira la contraseña del usuario administrador
+En varias ocasiones pedirá la contraseña del usuario administrador
 
 ## Prerequisitos Debian
 - git
