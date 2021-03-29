@@ -14,8 +14,6 @@ cd "$folder_Custom_Commands"
 
 git checkout "$branch"
 
-script_dot="dot"
-
 rm -rf "$DOTFILES_PATH/commands_custom/$alias"
 
 if [ -d "$folder_Custom_Commands" ]; then
