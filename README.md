@@ -52,5 +52,9 @@ Ejecutamos de nueva cuenta el comando dot
 
 ![command_dot](https://user-images.githubusercontent.com/2577473/112799325-6eb0b500-902b-11eb-9424-55764258f2fe.png)
 
+Ya se mostrara con exito los comandos Third Party
+
+![success_get_commands_third_party](https://user-images.githubusercontent.com/2577473/112805981-855b0a00-9033-11eb-98e4-27eb7ae6d607.png)
+
 [josedejesuschavezrepo]: https://github.com/josedejesuschavez/commands-public
 [josedejesuschavezrepo_git]: https://github.com/josedejesuschavez/commands-public.git
