@@ -9,6 +9,7 @@
 * Uso básico
     * [Obtener repositorios Third Party](#obtener-repositorios-third-party)
     * Crear nuevo repositorio Third Party
+    * Remover repositorio Third Party
     * Crear un nuevo comando
     * Remover comando creado
     * Remover modulo creado
