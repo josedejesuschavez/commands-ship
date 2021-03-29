@@ -36,12 +36,12 @@ Dentro de cada comando se encuentra 3 archivos y una carpeta, las cuales son doc
 
 Archivos:
 
-- doc
-- params
-- script
+- doc       -> En este archivo se encuentra la documentación que se visualiza en el comando dot del lado derecho de la terminal
+- params    -> Este archivo nos sirve para obtener los parametros para ejecutar el archivo de script con los datos correctos
+- script    -> En este archivo viene la implementación de nuestro comando
 
 Carpeta:
-- code
+- code      -> Viene en esta carpeta todos los archivos necesitarios para poder ejecutar el comando correctamente
 
 ## Obtener repositorios Third Party
 Ejecutar el comando dot
