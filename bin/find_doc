@@ -1,0 +1,10 @@
+#!/bin/bash
+module="${1}"
+command="${2}"
+repository="${3}"
+
+if [ "$repository" == "" ]; then
+    echo "$DOTFILES_PATH/commands/$module/$command"
+else
+    echo "$DOTFILES_PATH/commands_custom/$repository/commands/$module/$command"
+fi

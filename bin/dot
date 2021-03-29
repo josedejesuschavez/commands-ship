@@ -53,27 +53,33 @@ function fzf_prompt() {
       fzf \
         --height 100% \
         --layout=reverse \
-        --preview 'cat $(echo {})/doc' \
-        --preview-window right:80
+        --preview 'cat $(find_doc $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) $(echo {} | cut -d" " -f 3))/doc' \
+        --preview-window right:120
   )"
 
   command_selected="$script"
 
+  module="$(echo $command_selected | cut -d" " -f 1)"
+  command="$(echo $command_selected | cut -d" " -f 2)"
+  repository="$(echo $command_selected | cut -d" " -f 3)"
+
+  path_command=$(find_doc $module $command $repository)
+  
   args=""
 
   if [ ! "$command_selected" == "" ]; then
-    params_readed=$(cat ${command_selected}/params)
+    params_readed=$(cat ${path_command}/params)
 
     if [ ! "$params_readed" == "" ]; then
       echo "Insert parameters!!!"
     fi
 
-    param_1="$(read_params_in_file "$command_selected" "1")"
-    param_2="$(read_params_in_file "$command_selected" "2")"
-    param_3="$(read_params_in_file "$command_selected" "3")"
-    param_4="$(read_params_in_file "$command_selected" "4")"
-    param_5="$(read_params_in_file "$command_selected" "5")"
-    param_6="$(read_params_in_file "$command_selected" "6")"
+    param_1="$(read_params_in_file "$path_command" "1")"
+    param_2="$(read_params_in_file "$path_command" "2")"
+    param_3="$(read_params_in_file "$path_command" "3")"
+    param_4="$(read_params_in_file "$path_command" "4")"
+    param_5="$(read_params_in_file "$path_command" "5")"
+    param_6="$(read_params_in_file "$path_command" "6")"
 
     subcommand_1="$(echo $param_1 | cut -d"=" -f 2-10)"
     subcommand_2="$(echo $param_2 | cut -d"=" -f 2-10)"
@@ -125,13 +131,13 @@ function fzf_prompt() {
     param_arg6="$(read_param "$param_6" "$subcommand_6")"
 
     args="$param_arg1 $param_arg2 $param_arg3 $param_arg4 $param_arg5 $param_arg6"
-    "${command_selected}/script" $args
+    "${path_command}/script" $args
   fi
 }
 
 list_scripts_path() {
-  commands=$(find "$DOTFILES_PATH/commands" -maxdepth 2 -mindepth 2 -type d)
-  commands_custom=$(find "$DOTFILES_PATH/commands_custom" -maxdepth 4 -mindepth 4 -type d)
+  commands=$(find "$DOTFILES_PATH/commands" -maxdepth 2 -mindepth 2 -type d | awk -F '/' '{print $6" "$7}')
+  commands_custom=$(find "$DOTFILES_PATH/commands_custom" -maxdepth 4 -mindepth 4 -type d | awk -F '/' '{print $8" "$9" "$6}')
 
   printf "%s\n" "$commands" | sort -u
   printf "%s\n" "$commands_custom" | sort -u
