@@ -3,7 +3,7 @@
 ## Contenido
 
 * [Instalacion](#Instalación)
-* [Prerequisitos]
+* Prerequisitos
     * [Debian](#prerequisitos-debian)
 
 ## Instalación:
