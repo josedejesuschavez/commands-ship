@@ -4,7 +4,7 @@
 
 * [Instalación](#Instalación)
 * Prerequisitos
-    * [Debian](#prerequisitos-para-uso-en-debian)
+    * [Debian](#pre-requisitos-para-uso-en-debian)
 * Uso básico
     * [Obtener repositorios Third Party](#obtener-repositorios-third-party)
     * Crear un nuevo comando
@@ -22,7 +22,7 @@
 
 En varias ocasiones pedirá la contraseña del usuario administrador
 
-## Prerequisitos para uso en Debian
+## Pre-requisitos para uso en Debian
 - git
 - wget
 - curl
