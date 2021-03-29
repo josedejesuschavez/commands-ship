@@ -7,7 +7,7 @@
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 # }}} End configuration added by Zim install
 
-export DOTFILES_PATH="${HOME}/.dotfiles"
+export DOTFILES_PATH="${HOME}/.commands-ship"
 
 #export FZF_DEFAULT_OPTS='
 #  --color=bg+:#073642,bg:#002b36,spinner:#719e07,hl:#586e75
