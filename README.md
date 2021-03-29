@@ -2,7 +2,7 @@
 
 ## Contenido
 
-* [Instalacion](#-Instalación)
+* [Instalacion](#Instalación)
 
 ## Instalación:
 `git clone https://github.com/josedejesuschavez/commands-ship.git $HOME/.commands-ship`
