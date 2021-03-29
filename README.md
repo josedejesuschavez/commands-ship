@@ -5,7 +5,7 @@
 * [Instalación](#Instalación)
 * Prerequisitos
     * [Debian](#pre-requisitos-para-uso-en-debian)
-* [Estructura de carpetas para cada comando](#estructura-de)
+* [Estructura de carpetas para cada comando](#estructura-de-carpetas-para-cada-comando)
 * Uso básico
     * [Obtener repositorios Third Party](#obtener-repositorios-third-party)
     * Crear un nuevo comando
@@ -29,6 +29,19 @@ En varias ocasiones pedirá la contraseña del usuario administrador
 - curl
 
 ## Estructura de carpetas para cada comando
+
+![folder_structure_command](https://user-images.githubusercontent.com/2577473/112806663-44afc080-9034-11eb-864f-617dcc98bf18.png)
+
+Dentro de cada comando se encuentra 3 archivos y una carpeta, las cuales son doc, params, scripts y la carpeta code.
+
+Archivos:
+
+- doc
+- params
+- script
+
+Carpeta:
+- code
 
 ## Obtener repositorios Third Party
 Ejecutar el comando dot
