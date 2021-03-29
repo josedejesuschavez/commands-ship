@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "---Installing configs ---"
-chmod -R 777 $HOME/.dotfiles/commands
+chmod -R 777 $HOME/.commands-ship
 sudo apt update
 if ! [ -x "$(command -v pip3)" ]; then
   sudo apt install python3-pip -y
