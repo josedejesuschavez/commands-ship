@@ -1,6 +1,8 @@
 #!/bin/bash
 
-folder_Custom_Commands="$HOME/.customCommands"
+repository="${1}"
+
+folder_Custom_Commands="$HOME/.customCommands-$repository"
 
 scriptdot="dot"
 
@@ -8,9 +10,8 @@ rm -rf "$folder_Custom_Commands/commands"
 
 mkdir "$folder_Custom_Commands/commands"
 
-cp -R "$DOTFILES_PATH/commands" "$folder_Custom_Commands"
-cp -R "$DOTFILES_PATH/git" "$folder_Custom_Commands"
-rm -rf "$folder_Custom_Commands/commands/dot"
+cp -R "$DOTFILES_PATH/commands_custom/$repository/commands" "$folder_Custom_Commands"
+#cp -R "$DOTFILES_PATH/git" "$folder_Custom_Commands"
 
 cd "$folder_Custom_Commands"
 
