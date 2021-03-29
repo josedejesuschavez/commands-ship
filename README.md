@@ -29,9 +29,11 @@ En varias ocasiones pedirá la contraseña del usuario administrador
 
 ## Obtener repositorios Third Party
 Ejecutar el comando dot
+
 ![command_dot](https://user-images.githubusercontent.com/2577473/112799325-6eb0b500-902b-11eb-9424-55764258f2fe.png)
 
 Buscar el comando GetCommandsFromGit
+
 ![find_command_getcommandsfromgit](https://user-images.githubusercontent.com/2577473/112799654-dff06800-902b-11eb-8c1d-49e68a47e3be.png)
 
 [josedejesuschavezrepo]: https://github.com/josedejesuschavez/commands-public
