@@ -1,0 +1,15 @@
+#!/bin/bash
+
+alias="${1}"
+
+folder_Custom_Commands="$HOME/.commands-$alias"
+
+cp -R "${DOTFILES_PATH}/commands/dot/CreateNewRepository/code" "${folder_Custom_Commands}"
+
+touch "${folder_Custom_Commands}/.gitignore"
+
+if [ -d "$folder_Custom_Commands" ]; then
+    mkdir "$DOTFILES_PATH/commands_custom/$alias"
+    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$alias"
+    rm -rf "$folder_Custom_Commands/commands/dot"
+fi
