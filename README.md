@@ -5,7 +5,7 @@
 
 * [Instalación](#Instalación)
 * Prerequisitos
-    * [Debian](#prerequisitos-debian)
+    * [Debian](#prerequisitos-para-uso-en-debian)
 * Uso básico
     * Obtener repositorios Third Party
     * Crear un nuevo comando
@@ -28,6 +28,7 @@ En varias ocasiones pedirá la contraseña del usuario administrador
 - wget
 - curl
 
+## Obtener repositorios Third Party
 ![command_dot](https://user-images.githubusercontent.com/2577473/112799325-6eb0b500-902b-11eb-9424-55764258f2fe.png)
 
 [josedejesuschavezrepo]: https://github.com/josedejesuschavez/commands-public
