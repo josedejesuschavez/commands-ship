@@ -2,9 +2,17 @@
 
 ## Contenido
 
-* [Instalacion](#Instalación)
+* [Instalación](#Instalación)
 * Prerequisitos
     * [Debian](#prerequisitos-debian)
+* Uso básico
+    * Obtener repositorios Third Party
+    * Crear un nuevo comando
+    * Remover comando creado
+    * Remover modulo creado
+    * Cambiar nombre a un comando
+    * Actualizar commands-ship
+    * Actualizar repositorios Third Party
 * Repositorios Third Party
     * [Jose de Jesus Chavez][josedejesuschavezrepo]
 ## Instalación:
