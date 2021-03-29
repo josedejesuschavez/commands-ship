@@ -4,7 +4,7 @@ echo "---Installing configs ---"
 sudo apt update
 sudo apt install python3-pip -y
 pip3 install dotbot
-$HOME/.local/bin/dotbot -c $HOME/.dotfiles/configs/symlinks.yaml -d $HOME/.dotfiles
+$HOME/.local/bin/dotbot -c $HOME/.dotfiles/configs/symlinks.yaml -d $HOME/.commands-ship
 sudo apt install fzf zsh -y
 chsh -s $(which zsh)
 mkdir $HOME/.zim
