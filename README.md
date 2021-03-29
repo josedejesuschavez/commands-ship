@@ -13,7 +13,7 @@
 
 En varias ocasiones pedirá la contraseña del usuario administrador
 
-## Prerequisitos Debian
+## Prerequisitos para uso en Debian
 - git
 - wget
 - curl
