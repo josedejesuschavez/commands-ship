@@ -7,7 +7,7 @@
 * Prerequisitos
     * [Debian](#prerequisitos-para-uso-en-debian)
 * Uso básico
-    * Obtener repositorios Third Party
+    * [Obtener repositorios Third Party](#obtener-repositorios-third-party)
     * Crear un nuevo comando
     * Remover comando creado
     * Remover modulo creado
