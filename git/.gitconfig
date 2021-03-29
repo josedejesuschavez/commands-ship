@@ -1,1 +1,6 @@
-
+[user]
+    name = Jose de Jesus Chavez
+    email = chavezjal06@hotmail.com
+[core]
+    excludesfile = /home/jchavez/.gitignore_global
+    filemode = false

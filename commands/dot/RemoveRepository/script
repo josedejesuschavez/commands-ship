@@ -1,0 +1,8 @@
+#!/bin/bash
+
+repository="${1}"
+
+folder_Custom_Commands="$HOME/.commands-$repository"
+
+rm -rf "${folder_Custom_Commands}"
+rm -rf "${DOTFILES_PATH}/commands_custom/$repository"
