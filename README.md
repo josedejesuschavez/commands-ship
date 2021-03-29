@@ -5,7 +5,7 @@
 * [Instalación](#Instalación)
 * Prerequisitos
     * [Debian](#pre-requisitos-para-uso-en-debian)
-* Estructura de carpeta de cada comando
+* Estructura de carpetas para cada comando
 * Uso básico
     * [Obtener repositorios Third Party](#obtener-repositorios-third-party)
     * Crear un nuevo comando
