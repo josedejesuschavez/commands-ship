@@ -48,6 +48,9 @@ Como siguiente parametro ingresaremos el alias, el alias nos sirve para identifi
 
 ![command_getcommandsfromgit_insert_parameter_alias](https://user-images.githubusercontent.com/2577473/112801195-d49e3c00-902d-11eb-8340-f02cd8da95e8.png)
 
+Ejecutamos de nueva cuenta el comando dot
+
+![command_dot](https://user-images.githubusercontent.com/2577473/112799325-6eb0b500-902b-11eb-9424-55764258f2fe.png)
 
 [josedejesuschavezrepo]: https://github.com/josedejesuschavez/commands-public
 [josedejesuschavezrepo_git]: https://github.com/josedejesuschavez/commands-public.git
