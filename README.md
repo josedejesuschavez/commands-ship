@@ -4,7 +4,7 @@
 
 * [Instalacion](#Instalación)
 * [Prerequisitos](#Instalación)
-    * [Debian](#Prerequisitos Debian)
+    * [Debian](#Instalación)
 
 ## Instalación:
 `git clone https://github.com/josedejesuschavez/commands-ship.git $HOME/.commands-ship`
