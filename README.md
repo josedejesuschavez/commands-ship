@@ -5,7 +5,7 @@
 * [Instalación](#Instalación)
 * Prerequisitos
     * [Debian](#pre-requisitos-para-uso-en-debian)
-* Estructura de carpetas para cada comando
+* [Estructura de carpetas para cada comando](#estructura-de)
 * Uso básico
     * [Obtener repositorios Third Party](#obtener-repositorios-third-party)
     * Crear un nuevo comando
@@ -27,6 +27,8 @@ En varias ocasiones pedirá la contraseña del usuario administrador
 - git
 - wget
 - curl
+
+## Estructura de carpetas para cada comando
 
 ## Obtener repositorios Third Party
 Ejecutar el comando dot
