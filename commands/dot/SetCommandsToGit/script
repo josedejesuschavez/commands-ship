@@ -2,7 +2,7 @@
 
 repository="${1}"
 
-folder_Custom_Commands="$HOME/.customCommands-$repository"
+folder_Custom_Commands="$HOME/.commands-$repository"
 
 scriptdot="dot"
 

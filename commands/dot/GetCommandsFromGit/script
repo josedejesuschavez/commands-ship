@@ -3,7 +3,7 @@
 repoGit=${1}
 branch=${2}
 alias=${3}
-folder_Custom_Commands="$HOME/.customCommands-$alias"
+folder_Custom_Commands="$HOME/.commands-$alias"
 
 if [ -d "$folder_Custom_Commands" ]; then
     rm -rf "$folder_Custom_Commands"
