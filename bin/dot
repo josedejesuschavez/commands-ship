@@ -54,7 +54,7 @@ function fzf_prompt() {
         --height 100% \
         --layout=reverse \
         --preview 'cat $(find_doc $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) $(echo {} | cut -d" " -f 3))/doc' \
-        --preview-window right:120
+        --preview-window right:80
   )"
 
   command_selected="$script"
