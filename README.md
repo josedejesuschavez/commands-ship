@@ -19,6 +19,8 @@
 * Repositorios Third Party
     * [Jose de Jesus Chavez][josedejesuschavezrepo]
     * [Docker][docker-repo]
+    * [Vim][vim-repo]
+    * [Python][python-repo]
 ## Instalación:
 `git clone https://github.com/josedejesuschavez/commands-ship.git $HOME/.commands-ship`
 
@@ -77,4 +79,6 @@ Ya se mostrara con exito los comandos Third Party
 
 [josedejesuschavezrepo]: https://github.com/josedejesuschavez/commands-public
 [docker-repo]: https://github.com/josedejesuschavez/commands-docker
+[vim-repo]: https://github.com/josedejesuschavez/commands-vim
+[python-repo]: https://github.com/josedejesuschavez/commands-python
 [josedejesuschavezrepo_git]: https://github.com/josedejesuschavez/commands-public.git
