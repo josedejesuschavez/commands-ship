@@ -18,6 +18,7 @@
     * Actualizar repositorios Third Party
 * Repositorios Third Party
     * [Jose de Jesus Chavez][josedejesuschavezrepo]
+    * [Docker][docker-repo]
 ## Instalación:
 `git clone https://github.com/josedejesuschavez/commands-ship.git $HOME/.commands-ship`
 
@@ -75,4 +76,5 @@ Ya se mostrara con exito los comandos Third Party
 ![success_get_commands_third_party](https://user-images.githubusercontent.com/2577473/112805981-855b0a00-9033-11eb-98e4-27eb7ae6d607.png)
 
 [josedejesuschavezrepo]: https://github.com/josedejesuschavez/commands-public
+[docker-repo]: https://github.com/josedejesuschavez/commands-docker
 [josedejesuschavezrepo_git]: https://github.com/josedejesuschavez/commands-public.git
