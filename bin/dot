@@ -131,7 +131,7 @@ function fzf_prompt() {
     param_arg6="$(read_param "$param_6" "$subcommand_6")"
 
     args="$param_arg1 $param_arg2 $param_arg3 $param_arg4 $param_arg5 $param_arg6"
-    sudo "${path_command}/script" $args
+    "${path_command}/script" $args
   fi
 }
 
