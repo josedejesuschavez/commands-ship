@@ -8,5 +8,16 @@ folder_Custom_Commands="/home/jchavez/.commands-$repository"
 cd "$folder_Custom_Commands"
 
 git pull origin "$(git rev-parse --abbrev-ref HEAD)"
-cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$repository"
-#cp -R "$folder_Custom_Commands/git" "$DOTFILES_PATH"
+
+if [ -d "$folder_Custom_Commands/commands" ]; then
+    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$repository"
+fi
+
+if [ -d "$folder_Custom_Commands/ssh" ]; then
+    cp -R "$folder_Custom_Commands/ssh" "$DOTFILES_PATH"
+fi
+
+#if [ -d "/home/jchavez/.commands-ssh-credential/commands" ]; then
+#    echo "asfgsadgsdg"
+#    #cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$repository"
+#fi

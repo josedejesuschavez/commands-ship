@@ -7,11 +7,12 @@ folder_Custom_Commands="$HOME/.commands-$repository"
 scriptdot="dot"
 
 rm -rf "$folder_Custom_Commands/commands"
-
 mkdir "$folder_Custom_Commands/commands"
-
-cp -R "$DOTFILES_PATH/commands_custom/$repository/commands" "$folder_Custom_Commands"
-#cp -R "$DOTFILES_PATH/git" "$folder_Custom_Commands"
+if [ -d "$folder_Custom_Commands/commands" ]; then
+    if [ -d "$DOTFILES_PATH/commands_custom/$repository/commands" ]; then
+        cp -R "$DOTFILES_PATH/commands_custom/$repository/commands" "$folder_Custom_Commands"
+    fi
+fi
 
 cd "$folder_Custom_Commands"
 
