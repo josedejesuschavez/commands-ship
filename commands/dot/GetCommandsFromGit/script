@@ -21,3 +21,17 @@ if [ -d "$folder_Custom_Commands" ]; then
     cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$alias"
     rm -rf "$folder_Custom_Commands/commands/dot"
 fi
+
+if [ -d "$folder_Custom_Commands/git" ]; then
+    echo "Setup git configuration"
+    echo -ne '#####                     (33%)\r'
+    sleep 1
+    echo -ne '#############             (66%)\r'
+    sleep 1
+    
+
+    ls "$folder_Custom_Commands/git" -A | xargs -I _ sh -c 'cp "$HOME/.commands-public/git/_" $HOME/.commands-ship/git'
+
+    echo -ne '#######################   (100%)\r'
+    echo -ne '\n'
+fi
