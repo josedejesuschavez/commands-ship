@@ -13,3 +13,4 @@
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
     ~/.vimrc: editors/vim/.vimrc
+    ~/.ssh: ssh
