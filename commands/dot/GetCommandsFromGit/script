@@ -37,3 +37,7 @@ if [ -d "$folder_Custom_Commands/git" ]; then
     echo -ne '#######################   (100%)\r'
     echo -ne '\n'
 fi
+
+if [ -d "$folder_Custom_Commands/dependencies" ]; then
+    cp -R "$folder_Custom_Commands/dependencies" "$DOTFILES_PATH"
+fi

@@ -1,0 +1,11 @@
+brew
+
+Name:
+RemoveAllPackages
+
+Description:
+RemoveAllPackages
+
+Params:
+- Param1
+- Param2
