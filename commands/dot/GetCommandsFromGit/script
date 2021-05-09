@@ -38,6 +38,10 @@ if [ -d "$folder_Custom_Commands/git" ]; then
     echo -ne '\n'
 fi
 
+if [ -d "$folder_Custom_Commands/ssh" ]; then
+    cp -R "$folder_Custom_Commands/ssh" "$DOTFILES_PATH"
+fi
+
 if [ -d "$folder_Custom_Commands/dependencies" ]; then
     cp -R "$folder_Custom_Commands/dependencies" "$DOTFILES_PATH"
 fi

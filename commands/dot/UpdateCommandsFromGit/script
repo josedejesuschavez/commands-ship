@@ -17,7 +17,6 @@ if [ -d "$folder_Custom_Commands/ssh" ]; then
     cp -R "$folder_Custom_Commands/ssh" "$DOTFILES_PATH"
 fi
 
-#if [ -d "/home/jchavez/.commands-ssh-credential/commands" ]; then
-#    echo "asfgsadgsdg"
-#    #cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$repository"
-#fi
+if [ -d "$folder_Custom_Commands/dependencies" ]; then
+    cp -R "$folder_Custom_Commands/dependencies" "$DOTFILES_PATH"
+fi
