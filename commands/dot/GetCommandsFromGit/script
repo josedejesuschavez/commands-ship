@@ -32,7 +32,7 @@ if [ -d "$folder_Custom_Commands/git" ]; then
     sleep 1
     
 
-    ls "$folder_Custom_Commands/git" -A | xargs -I _ sh -c 'cp "$HOME/.commands-public/git/_" $HOME/.commands-ship/git'
+    ls -A "$folder_Custom_Commands/git" | xargs -I _ sh -c 'cp "$HOME/.commands-public/git/_" $HOME/.commands-ship/git'
 
     echo -ne '#######################   (100%)\r'
     echo -ne '\n'
