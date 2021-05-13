@@ -10,6 +10,10 @@ if ! [ -x "$(command -v dotbot)" ]; then
   pip3 install dotbot
 fi
 
+if ! [ -x "$(command -v brew)" ]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 "$(command -v dotbot)" -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
 if ! [ -x "$(command -v fzf)" ]; then
@@ -28,10 +32,7 @@ if [ ! -d "$HOME/.zim" ]; then
 	zsh ~/.zim/zimfw.zsh install
 fi
 
-#if ! [ -x "$(command -v brew)" ]; then
-#  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#  /home/linuxbrew/.linuxbrew/bin/brew install tldr
-#fi
+
 
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
