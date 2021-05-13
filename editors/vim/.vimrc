@@ -20,16 +20,15 @@ Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
 " colorscheme gruvbox
 " let g:gruvbox_contrast_dark = 
 " let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
 
 let mapleader=" "
-
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <leader>nt :NERDTreeFind<CR>
 nmap <leader>w :w<CR>
