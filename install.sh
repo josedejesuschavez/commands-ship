@@ -9,6 +9,7 @@ echo "---Installing configs ---"
 if ! [ -x "$(command -v pip3)" ]; then
   sudo apt install python3-pip -y
 fi
+
 if ! [ -x "$(command -v dotbot)" ]; then
   pip3 install dotbot
 fi
