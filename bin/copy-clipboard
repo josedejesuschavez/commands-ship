@@ -1,0 +1,5 @@
+#!/bin/bash
+
+content="${1}"
+
+echo "$content" | pbcopy
