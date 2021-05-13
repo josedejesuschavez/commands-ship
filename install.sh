@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if ! [ -x "$(command -v brew)" ]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 echo "---Installing configs ---"
 
 if ! [ -x "$(command -v pip3)" ]; then
@@ -7,10 +11,6 @@ if ! [ -x "$(command -v pip3)" ]; then
 fi
 if ! [ -x "$(command -v dotbot)" ]; then
   pip3 install dotbot
-fi
-
-if ! [ -x "$(command -v brew)" ]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 "$(command -v dotbot)" -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
