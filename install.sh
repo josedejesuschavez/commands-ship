@@ -10,7 +10,7 @@ if ! [ -x "$(command -v dotbot)" ]; then
   pip3 install dotbot
 fi
 
-$HOME/.local/bin/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
+"$(command -v dotbot)" -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
 if ! [ -x "$(command -v fzf)" ]; then
   sudo apt install fzf
