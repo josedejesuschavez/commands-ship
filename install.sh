@@ -19,7 +19,7 @@ fi
 "$(command -v dotbot)" -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
 if ! [ -x "$(command -v fzf)" ]; then
-  sudo apt install fzf
+  brew install fzf
 fi
 
 if ! [ -x "$(command -v zsh)" ]; then
