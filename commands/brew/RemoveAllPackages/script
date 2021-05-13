@@ -3,3 +3,4 @@
 echo "Removing all packages"
 brew list -1 | xargs brew rm
 brew cleanup
+brew install fzf
