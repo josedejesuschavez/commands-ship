@@ -4,7 +4,7 @@ repository="${1}"
 
 echo "Updating Commands"
 
-folder_Custom_Commands="/home/jchavez/.commands-$repository"
+folder_Custom_Commands="$HOME/.commands-$repository"
 cd "$folder_Custom_Commands"
 
 git pull origin "$(git rev-parse --abbrev-ref HEAD)"
