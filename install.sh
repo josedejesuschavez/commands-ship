@@ -10,6 +10,10 @@ if ! [ -x "$(command -v pip3)" ]; then
   sudo apt install python3-pip -y
 fi
 
+if ! [ -x "$(command -v wget)" ]; then
+  brew install wget
+fi
+
 if ! [ -x "$(command -v dotbot)" ]; then
   pip3 install dotbot
 fi
