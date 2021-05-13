@@ -4,8 +4,6 @@ if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo "---Installing configs ---"
-
 if ! [ -x "$(command -v pip3)" ]; then
   sudo apt install python3-pip -y
 fi
