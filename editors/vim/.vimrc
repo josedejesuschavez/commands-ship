@@ -23,7 +23,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
-" colorscheme gruvbox
+colorscheme gruvbox
 " let g:gruvbox_contrast_dark = 
 " let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
