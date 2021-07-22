@@ -19,13 +19,13 @@ ${brew_path}/pip3 install fzf
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
-chsh -s $(which zsh)
+#chsh -s $(which zsh)
 
-if [ ! -d "$HOME/.zim" ]; then
-	mkdir $HOME/.zim
-	wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-	zsh ~/.zim/zimfw.zsh install
-fi
+#if [ ! -d "$HOME/.zim" ]; then
+#	mkdir $HOME/.zim
+#	wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+#	zsh ~/.zim/zimfw.zsh install
+#fi
 
 
 
