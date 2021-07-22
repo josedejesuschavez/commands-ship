@@ -6,8 +6,6 @@ sudo apt update
 
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  
-  
 fi
 
 ${brew_path}/brew install wget
