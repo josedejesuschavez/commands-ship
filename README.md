@@ -24,7 +24,7 @@
 ## Instalación:
 `git clone https://github.com/josedejesuschavez/commands-ship.git $HOME/.commands-ship`
 
-`sh $HOME/.commands-ship/install.sh`
+`sh $HOME/.commands-ship/install_on_linux.sh`
 
 En varias ocasiones pedirá la contraseña del usuario administrador
 
