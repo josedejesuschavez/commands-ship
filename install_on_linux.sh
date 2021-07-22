@@ -22,6 +22,8 @@ ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.comm
 export PATH="${brew_path}:$PATH"
 
 #chsh -s $(which zsh)
+sudo chsh -s ${brew_path}/zsh "${USER}"
+
 
 if [ ! -d "$HOME/.zim" ]; then
   mkdir $HOME/.zim
