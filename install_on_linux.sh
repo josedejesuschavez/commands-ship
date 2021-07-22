@@ -24,9 +24,9 @@ export PATH="${brew_path}:$PATH"
 #chsh -s $(which zsh)
 
 if [ ! -d "$HOME/.zim" ]; then
-	mkdir $HOME/.zim
+  mkdir $HOME/.zim
   wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-	zsh ~/.zim/zimfw.zsh install
+  zsh ~/.zim/zimfw.zsh install
 fi
 
 
