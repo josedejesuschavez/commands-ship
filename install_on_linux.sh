@@ -10,8 +10,8 @@ fi
 
 export PATH="${brew_path}:$PATH"
 
-#brew list -1 | xargs brew rm
-#brew cleanup
+${brew_path}/brew list -1 | xargs ${brew_path}/brew rm
+${brew_path}/brew cleanup
 
 ${brew_path}/brew install wget
 ${brew_path}/brew install python
