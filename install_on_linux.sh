@@ -1,5 +1,7 @@
 #!/bin/bash
 
+brew_path="/home/linuxbrew/.linuxbrew/bin/"
+
 sudo apt update
 
 if ! [ -x "$(command -v brew)" ]; then
