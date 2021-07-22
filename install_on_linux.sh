@@ -6,29 +6,18 @@ sudo apt update
 
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  
+  
 fi
 
-if ! [ -x "$(command -v pip3)" ]; then
-  sudo apt install python3-pip -y
-fi
+${brew_path}/brew install wget
+${brew_path}/brew install python
+${brew_path}/brew install zsh
 
-if ! [ -x "$(command -v wget)" ]; then
-  brew install wget
-fi
+${brew_path}/pip3 install dotbot
+${brew_path}/pip3 install fzf
 
-if ! [ -x "$(command -v dotbot)" ]; then
-  pip3 install dotbot
-fi
-
-"$(command -v dotbot)" -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
-
-if ! [ -x "$(command -v fzf)" ]; then
-  brew install fzf
-fi
-
-if ! [ -x "$(command -v zsh)" ]; then
-  sudo apt install zsh
-fi
+${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
 chsh -s $(which zsh)
 
