@@ -13,9 +13,9 @@ fi
 ${brew_path}/brew install wget
 ${brew_path}/brew install python
 ${brew_path}/brew install zsh
+${brew_path}/brew  install fzf
 
 ${brew_path}/pip3 install dotbot
-${brew_path}/pip3 install fzf
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
