@@ -33,6 +33,8 @@ if [ ! -d "$HOME/.zim" ]; then
 fi
 
 sudo apt-get remove git
+sudo apt-get -y purge python3.8
+sudo apt-get -y autoremove
 
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
