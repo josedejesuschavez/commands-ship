@@ -17,6 +17,7 @@ ${brew_path}/brew install wget
 ${brew_path}/brew install python
 ${brew_path}/brew install zsh
 ${brew_path}/brew install fzf
+${brew_path}/brew install git
 
 ${brew_path}/pip3 install dotbot
 
