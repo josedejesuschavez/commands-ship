@@ -32,7 +32,7 @@ if [ ! -d "$HOME/.zim" ]; then
   ${brew_path}/zsh ~/.zim/zimfw.zsh install
 fi
 
-
+sudo apt-get remove git
 
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
