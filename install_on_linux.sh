@@ -6,13 +6,13 @@ sudo apt update
 
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  
-  sudo apt-get remove git
-  sudo apt-get -y purge python3.8
-  sudo apt-get -y autoremove
 fi
 
 export PATH="${brew_path}:$PATH"
+
+sudo apt-get remove git
+sudo apt-get -y purge python3.8
+sudo apt-get -y autoremove
 
 #${brew_path}/brew list -1 | xargs ${brew_path}/brew rm
 #${brew_path}/brew cleanup
