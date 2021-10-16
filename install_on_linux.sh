@@ -1,12 +1,12 @@
 #!/bin/bash
 
-brew_path="/home/linuxbrew/.linuxbrew/bin/"
-
 sudo apt update
 
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+brew_path=$(find /home -type d | grep .linuxbrew/bin)
 
 export PATH="${brew_path}:$PATH"
 
