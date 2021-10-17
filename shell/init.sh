@@ -7,4 +7,9 @@ source "$DOTFILES_PATH/shell/functions.sh"
 #Update/script
 #UpdateCommandsFromGit/script
 
+if [ -f "$HOME/.zim/zimfw.zsh" ]; then
+    zsh ~/.zim/zimfw.zsh install
+    rm $HOME/.zim/zimfw.zsh
+fi
+
 cd $HOME
