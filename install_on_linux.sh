@@ -31,11 +31,11 @@ sudo chsh -s ${brew_path}/zsh "${USER}"
 
 wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | ${brew_path}/zsh
 
-#if [ ! -d "$HOME/.zim" ]; then
-#  mkdir $HOME/.zim
-#  ${brew_path}/wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+if [ ! -d "$HOME/.zim" ]; then
+  mkdir $HOME/.zim
+  ${brew_path}/wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 #  ${brew_path}/zsh ~/.zim/zimfw.zsh install
-#fi
+fi
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
