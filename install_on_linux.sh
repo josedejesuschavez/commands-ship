@@ -29,7 +29,7 @@ ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.comm
 
 sudo chsh -s ${brew_path}/zsh "${USER}"
 
-wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | ${brew_path}/zsh
+#wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | ${brew_path}/zsh
 
 if [ ! -d "$HOME/.zim" ]; then
   mkdir $HOME/.zim
