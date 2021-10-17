@@ -1,7 +1,8 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt-get install build-essential procps curl file git
+
+sudo apt install build-essential procps curl file git wget curl
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
