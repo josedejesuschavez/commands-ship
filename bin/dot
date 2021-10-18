@@ -24,7 +24,7 @@ function read_params_in_file() {
     fi
     
     number_line=$((number_line + 1))
-  done < "${command_selected}/params"
+  done < "${command_selected}"
 }
 
 
@@ -53,7 +53,7 @@ function fzf_prompt() {
       fzf \
         --height 100% \
         --layout=reverse \
-        --preview 'cat $(find_doc $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) $(echo {} | cut -d" " -f 3))/doc' \
+        --preview 'cat $(find ${DOTFILES_PATH} -type f | grep $(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)/doc)' \
         --preview-window right:80
   )"
 
@@ -61,25 +61,25 @@ function fzf_prompt() {
 
   module="$(echo $command_selected | cut -d" " -f 1)"
   command="$(echo $command_selected | cut -d" " -f 2)"
-  repository="$(echo $command_selected | cut -d" " -f 3)"
 
-  path_command=$(find_doc $module $command $repository)
+  path_command_params=$(find ${DOTFILES_PATH} -type f | grep ${module}/${command}/params)
+  path_command_script=$(find ${DOTFILES_PATH} -type f | grep ${module}/${command}/script)
   
   args=""
 
   if [ ! "$command_selected" == "" ]; then
-    params_readed=$(cat ${path_command}/params)
+    params_readed=$(cat ${path_command_params})
 
     if [ ! "$params_readed" == "" ]; then
       echo "Insert parameters!!!"
     fi
 
-    param_1="$(read_params_in_file "$path_command" "1")"
-    param_2="$(read_params_in_file "$path_command" "2")"
-    param_3="$(read_params_in_file "$path_command" "3")"
-    param_4="$(read_params_in_file "$path_command" "4")"
-    param_5="$(read_params_in_file "$path_command" "5")"
-    param_6="$(read_params_in_file "$path_command" "6")"
+    param_1="$(read_params_in_file "$path_command_params" "1")"
+    param_2="$(read_params_in_file "$path_command_params" "2")"
+    param_3="$(read_params_in_file "$path_command_params" "3")"
+    param_4="$(read_params_in_file "$path_command_params" "4")"
+    param_5="$(read_params_in_file "$path_command_params" "5")"
+    param_6="$(read_params_in_file "$path_command_params" "6")"
 
     subcommand_1="$(echo $param_1 | cut -d"=" -f 2-10)"
     subcommand_2="$(echo $param_2 | cut -d"=" -f 2-10)"
@@ -131,13 +131,13 @@ function fzf_prompt() {
     param_arg6="$(read_param "$param_6" "$subcommand_6")"
 
     args="$param_arg1 $param_arg2 $param_arg3 $param_arg4 $param_arg5 $param_arg6"
-    "${path_command}/script" $args
+    "${path_command_script}" $args
   fi
 }
 
 list_scripts_path() {
   commands=$(find "$DOTFILES_PATH/commands" -maxdepth 2 -mindepth 2 -type d | awk -F '/' '{print $6" "$7}')
-  commands_custom=$(find "$DOTFILES_PATH/commands_custom" -maxdepth 4 -mindepth 4 -type d | awk -F '/' '{print $8" "$9" "$6}')
+  commands_custom=$(find "$DOTFILES_PATH/commands_custom" -maxdepth 2 -mindepth 2 -type d | awk -F '/' '{print $6" "$7}')
 
   printf "%s\n" "$commands" | sort -u
   printf "%s\n" "$commands_custom" | sort -u
