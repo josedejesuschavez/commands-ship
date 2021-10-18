@@ -10,6 +10,10 @@ source "$DOTFILES_PATH/shell/functions.sh"
 if [ -f "$HOME/.zim/zimfw.zsh" ]; then
     zsh ~/.zim/zimfw.zsh install
     rm $HOME/.zim/zimfw.zsh
+    
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim +'PlugInstall --sync' +qa
 fi
 
 cd $HOME
