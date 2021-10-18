@@ -18,7 +18,7 @@ rm -rf "$DOTFILES_PATH/commands_custom/$alias"
 
 if [ -d "$folder_Custom_Commands/commands" ]; then
     mkdir "$DOTFILES_PATH/commands_custom/$alias"
-    cp -R "$folder_Custom_Commands/commands" "$DOTFILES_PATH/commands_custom/$alias"
+    cp -R "$folder_Custom_Commands/commands/." "$DOTFILES_PATH/commands_custom/$alias"
     rm -rf "$folder_Custom_Commands/commands/dot"
 else
     mkdir "$DOTFILES_PATH/commands_custom/$alias"
