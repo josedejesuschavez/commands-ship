@@ -17,3 +17,4 @@ if [ -f "$HOME/.zim/zimfw.zsh" ]; then
 fi
 
 cd $HOME
+eval `ssh-agent`
