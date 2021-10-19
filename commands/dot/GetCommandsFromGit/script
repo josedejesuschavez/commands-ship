@@ -40,6 +40,7 @@ fi
 
 if [ -d "$folder_Custom_Commands/ssh" ]; then
     cp -R "$folder_Custom_Commands/ssh" "$DOTFILES_PATH"
+    ls $folder_Custom_Commands/ssh | xargs -I _ sh -c 'echo "ssh-add ~/ssh/_" >> ~/.commands-ship/shell/init.sh'
 fi
 
 if [ -d "$folder_Custom_Commands/dependencies" ]; then
