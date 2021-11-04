@@ -11,6 +11,8 @@ if [ -f "$HOME/.zim/zimfw.zsh" ]; then
     zsh ~/.zim/zimfw.zsh install
     rm $HOME/.zim/zimfw.zsh
     
+    cat $HOME/.commands-ship/dependencies/snap | xargs -I _ sh -c "sudo snap install _"
+    
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim +'PlugInstall --sync' +qa
