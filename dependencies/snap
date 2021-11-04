@@ -1,1 +1,4 @@
 code --classic
+dotnet-sdk --channel=2.1/stable --classic
+pycharm-professional --classic
+rider --classic
