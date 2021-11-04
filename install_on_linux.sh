@@ -2,10 +2,13 @@
 
 sudo apt update
 
-sudo apt install build-essential procps curl file wget libsquashfuse0 squashfuse fuse snapd
+sudo apt install build-essential procps curl file wget
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+sudo apt install libsquashfuse0 squashfuse fuse
+sudo apt install snapd
 
 sudo snap install core
 
