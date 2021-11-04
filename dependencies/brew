@@ -1,0 +1,6 @@
+wget
+python
+zsh
+fzf
+git
+neovim
