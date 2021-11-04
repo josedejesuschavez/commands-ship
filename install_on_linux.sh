@@ -18,13 +18,8 @@ brew_path=$(find /home -type d | grep .linuxbrew/bin)
 #${brew_path}/brew list -1 | xargs ${brew_path}/brew rm
 #${brew_path}/brew cleanup
 
-${brew_path}/brew install wget
-${brew_path}/brew install python
-${brew_path}/brew install zsh
-${brew_path}/brew install fzf
-${brew_path}/brew install git
-
-${brew_path}/pip3 install dotbot
+cat dependencies/brew | xargs -I _ ${brew_path}/brew install _
+cat dependencies/python | xargs -I _ ${brew_path}/pip3 install _
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
