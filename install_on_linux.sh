@@ -16,14 +16,9 @@ sudo chmod 755 /
 
 brew_path=$(find /home -type d | grep .linuxbrew/bin)
 
-#export PATH="${brew_path}:$PATH"
-
-#sudo apt-get remove git
-#sudo apt-get -y purge python3.8
-#sudo apt-get -y autoremove
-
-#${brew_path}/brew list -1 | xargs ${brew_path}/brew rm
-#${brew_path}/brew cleanup
+sudo apt-get remove git
+sudo apt-get -y purge python3
+sudo apt-get -y autoremove
 
 cat $HOME/.commands-ship/dependencies/brew | xargs -I _ ${brew_path}/brew install _
 cat $HOME/.commands-ship/dependencies/python | xargs -I _ ${brew_path}/pip3 install _
@@ -33,12 +28,9 @@ ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.comm
 
 sudo chsh -s ${brew_path}/zsh "${USER}"
 
-#wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | ${brew_path}/zsh
-
 if [ ! -d "$HOME/.zim" ]; then
   mkdir $HOME/.zim
   ${brew_path}/wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-#  ${brew_path}/zsh ~/.zim/zimfw.zsh install
 fi
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
