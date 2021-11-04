@@ -24,6 +24,7 @@ brew_path=$(find /home -type d | grep .linuxbrew/bin)
 
 cat dependencies/brew | xargs -I _ ${brew_path}/brew install _
 cat dependencies/python | xargs -I _ ${brew_path}/pip3 install _
+cat dependencies/snap | xargs -I _ sudo snap install _
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
