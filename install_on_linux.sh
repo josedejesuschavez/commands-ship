@@ -22,9 +22,9 @@ brew_path=$(find /home -type d | grep .linuxbrew/bin)
 #${brew_path}/brew list -1 | xargs ${brew_path}/brew rm
 #${brew_path}/brew cleanup
 
-cat dependencies/brew | xargs -I _ ${brew_path}/brew install _
-cat dependencies/python | xargs -I _ ${brew_path}/pip3 install _
-cat dependencies/snap | xargs -I _ sudo snap install _
+cat $HOME/.commands-ship/dependencies/brew | xargs -I _ ${brew_path}/brew install _
+cat $HOME/.commands-ship/dependencies/python | xargs -I _ ${brew_path}/pip3 install _
+cat $HOME/.commands-ship/dependencies/snap | xargs -I _ sudo snap install _
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
