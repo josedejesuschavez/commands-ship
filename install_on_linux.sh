@@ -2,10 +2,14 @@
 
 sudo apt update
 
-sudo apt install build-essential procps curl file wget
+sudo apt install build-essential procps curl file wget snapd
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+sudo snap install core
+
+sudo chmod 755 /
 
 brew_path=$(find /home -type d | grep .linuxbrew/bin)
 
