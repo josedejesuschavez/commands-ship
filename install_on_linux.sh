@@ -8,7 +8,6 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 sudo apt install libsquashfuse0 squashfuse fuse
-sudo apt install -y snapd
 
 sudo chmod 755 /
 
