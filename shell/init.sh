@@ -7,4 +7,6 @@ source "$DOTFILES_PATH/shell/functions.sh"
 if [ -f "$HOME/.zim/zimfw.zsh" ]; then
     zsh ~/.zim/zimfw.zsh install
     rm $HOME/.zim/zimfw.zsh
+    
+    cat $HOME/.commands-ship/dependencies/snap | xargs -I _ sh -c "sudo snap install _"
 fi
