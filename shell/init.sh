@@ -8,5 +8,6 @@ if [ -f "$HOME/.zim/zimfw.zsh" ]; then
     zsh ~/.zim/zimfw.zsh install
     rm $HOME/.zim/zimfw.zsh
     
+    sudo apt install -y snapd
     cat $HOME/.commands-ship/dependencies/snap | xargs -I _ sh -c "sudo snap install _"
 fi
