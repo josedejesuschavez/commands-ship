@@ -22,7 +22,6 @@ sudo apt-get -y autoremove
 
 cat $HOME/.commands-ship/dependencies/brew | xargs -I _ ${brew_path}/brew install _
 cat $HOME/.commands-ship/dependencies/python | xargs -I _ ${brew_path}/pip3 install _
-cat $HOME/.commands-ship/dependencies/snap | xargs -I _ sh -c "sudo snap install _"
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
