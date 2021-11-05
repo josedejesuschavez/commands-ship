@@ -10,8 +10,6 @@ fi
 sudo apt install libsquashfuse0 squashfuse fuse
 sudo apt install -y snapd
 
-sudo snap install core
-
 sudo chmod 755 /
 
 brew_path=$(find /home -type d | grep .linuxbrew/bin)
