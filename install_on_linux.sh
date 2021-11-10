@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt update
+sudo apt update > /dev/null
 
 sudo apt install -y build-essential procps curl file wget > /dev/null
 if ! [ -x "$(command -v brew)" ]; then
