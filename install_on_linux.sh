@@ -12,7 +12,7 @@ sudo apt install libsquashfuse0 squashfuse fuse
 sudo chmod 755 /
 
 brew_path=$(find /home -type d | grep .linuxbrew/bin)
-export PATH="$HOME/.linuxbrew/bin:$PATH"
+export PATH="$brew_path:$PATH"
 
 sudo apt remove -y git
 sudo apt purge -y python3
