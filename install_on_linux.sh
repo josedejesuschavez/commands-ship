@@ -21,9 +21,11 @@ sudo apt autoremove -y
 cat $HOME/.commands-ship/dependencies/brew | xargs -I _ brew install _
 cat $HOME/.commands-ship/dependencies/python | xargs -I _ pip3 install _
 
-${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
+
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
