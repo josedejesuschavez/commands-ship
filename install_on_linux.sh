@@ -2,7 +2,7 @@
 
 sudo apt update
 
-sudo apt install -y build-essential procps curl file wget zsh
+sudo apt install -y build-essential procps curl file wget
 if ! [ -x "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
@@ -12,13 +12,14 @@ sudo apt install libsquashfuse0 squashfuse fuse
 sudo chmod 755 /
 
 brew_path=$(find /home -type d | grep .linuxbrew/bin)
+export PATH="$HOME/.linuxbrew/bin:$PATH"
 
 sudo apt remove -y git
 sudo apt purge -y python3
 sudo apt autoremove -y
 
-cat $HOME/.commands-ship/dependencies/brew | xargs -I _ ${brew_path}/brew install _
-cat $HOME/.commands-ship/dependencies/python | xargs -I _ ${brew_path}/pip3 install _
+cat $HOME/.commands-ship/dependencies/brew | xargs -I _ brew install _
+cat $HOME/.commands-ship/dependencies/python | xargs -I _ pip3 install _
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
