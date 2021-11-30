@@ -23,12 +23,7 @@ cat $HOME/.commands-ship/dependencies/python | xargs -I _ pip3 install _
 
 ${brew_path}/dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
-sudo chsh -s ${brew_path}/zsh "${USER}"
-
-if [ ! -d "$HOME/.zim" ]; then
-  mkdir $HOME/.zim
-  ${brew_path}/wget -O $HOME/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-fi
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
