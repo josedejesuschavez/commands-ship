@@ -24,7 +24,9 @@ cat $HOME/.commands-ship/dependencies/python | xargs -I _ pip3 install _
 
 dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
-echo "exec zsh" >> $HOME/.bashrc
+
+echo "brew_path=$(find /home -type d | grep .linuxbrew/bin)" >> $HOME/.bashrc
+echo "exec ${brew_path}/zsh" >> $HOME/.bashrc
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
