@@ -8,6 +8,7 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 sudo apt install libsquashfuse0 squashfuse fuse
+sudo apt install -y snapd
 
 sudo chmod 755 /
 
@@ -20,7 +21,7 @@ export PATH="$brew_path:$PATH"
 
 cat $HOME/.commands-ship/dependencies/brew | xargs -I _ brew install _
 cat $HOME/.commands-ship/dependencies/python | xargs -I _ pip3 install _
-
+cat $HOME/.commands-ship/dependencies/snap | xargs -I _ sh -c "sudo snap install _"
 
 dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship
 
