@@ -14,9 +14,9 @@ sudo chmod 755 /
 brew_path=$(find /home -type d | grep .linuxbrew/bin)
 export PATH="$brew_path:$PATH"
 
-sudo apt remove -y git
-sudo apt purge -y python3
-sudo apt autoremove -y
+#sudo apt remove -y git
+#sudo apt purge -y python3
+#sudo apt autoremove -y
 
 cat $HOME/.commands-ship/dependencies/brew | xargs -I _ brew install _
 cat $HOME/.commands-ship/dependencies/python | xargs -I _ pip3 install _
