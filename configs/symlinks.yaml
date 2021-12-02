@@ -8,10 +8,7 @@
 - link:
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
-    ~/.zimrc: shell/zsh/.zimrc
-    ~/.zlogin: shell/zsh/.zlogin
-    ~/.zshenv: shell/zsh/.zshenv
-    ~/.zshrc: shell/zsh/.zshrc
+    ~/.zshrc: shell/zsh/oh-my-zsh/.zshrc
     ~/.vimrc: editors/vim/.vimrc
     ~/.config/nvim/init.vim: editors/vim/init.vim
     ~/.ssh: ssh
