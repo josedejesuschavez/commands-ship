@@ -8,6 +8,7 @@
 - link:
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
+    ~/.zshenv: shell/zsh/oh-my-zsh/.zshenv
     ~/.zshrc: shell/zsh/oh-my-zsh/.zshrc
     ~/.vimrc: editors/vim/.vimrc
     ~/.config/nvim/init.vim: editors/vim/init.vim
