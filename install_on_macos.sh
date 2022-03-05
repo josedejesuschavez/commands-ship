@@ -1,6 +1,9 @@
 #!/bin/bash
 
+cd
+
 current_directory=$(pwd)
+current_directory="${current_directory}/.command_ship"
 
 install_brew=$(find ${current_directory} -type f | grep install_brew.sh)
 install_dependencies=$(find ${current_directory} -type f | grep install_dependencies.sh)
