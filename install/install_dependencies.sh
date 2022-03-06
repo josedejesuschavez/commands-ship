@@ -4,7 +4,7 @@ os=$(uname)
 
 if [ "${os}" = "Linux" ]; then
   brew_path=$(find /home -type d | grep .linuxbrew/bin)
-  export PATH="$brew_path:$PATH"
+  export PATH="${brew_path}:$PATH"
 fi
 
 cat $HOME/.commands-ship/dependencies/brew | xargs -I _ brew install _
