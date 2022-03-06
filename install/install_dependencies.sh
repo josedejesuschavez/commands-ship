@@ -7,6 +7,9 @@ os=$(uname)
 current_directory=$(pwd)
 current_directory="${current_directory}/.commands-ship"
 
+brew_bin_directory_macos="/usr/local/Homebrew/bin"
+brew_bin_directory_macos=".linuxbrew/bin"
+
 brew_path=$(find ${current_directory} -type d | grep .linuxbrew/bin)
 export PATH="$brew_path:$PATH"
 
