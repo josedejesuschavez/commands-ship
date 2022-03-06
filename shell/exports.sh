@@ -7,4 +7,4 @@ if [ "${os}" == "Linux" ]; then
   export PATH=$PATH:/snap/bin
 fi
 
-export PATH=$DOTFILES_PATH/bin:$PATH
+export PATH=${DOTFILES_PATH}/bin:$PATH
