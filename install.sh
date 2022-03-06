@@ -1,11 +1,8 @@
 #!/bin/bash
 
-cd
-
 os=$(uname)
 
-current_directory=$(pwd)
-current_directory="${current_directory}/.commands-ship"
+current_directory="${HOME}/.commands-ship"
 
 if [ "${os}" == "Linux" ]; then
   sudo apt update
