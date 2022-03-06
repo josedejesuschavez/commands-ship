@@ -1,7 +1,6 @@
 os=$(uname)
 
-echo "Hola mundo"
-if [[ "${os}" = "Linux" ]]; then
+if [ "${os}" = "Linux" ]; then
   export PATH=$HOME/.local/bin:$PATH
   export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
   export PATH=/home/linuxbrew/.linuxbrew/sbin:$PATH
