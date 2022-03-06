@@ -4,7 +4,7 @@ os=$(uname)
 
 current_directory="${HOME}/.commands-ship"
 
-if [ "${os}" == "Linux" ]; then
+if [ "${os}" = "Linux" ]; then
   sudo apt update
 
   sudo apt install -y build-essential procps curl file wget
