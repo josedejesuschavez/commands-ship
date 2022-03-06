@@ -2,8 +2,19 @@
 
 cd
 
+os=$(uname)
+
 current_directory=$(pwd)
 current_directory="${current_directory}/.commands-ship"
+
+if [ "${os}" == "Linux" ]; then
+  sudo apt update
+
+  sudo apt install -y build-essential procps curl file wget
+  sudo apt install libsquashfuse0 squashfuse fuse
+  sudo apt install -y snapd
+  sudo chmod 755 /
+fi
 
 install_brew=$(find ${current_directory} -type f | grep install_brew.sh)
 install_dependencies=$(find ${current_directory} -type f | grep install_dependencies.sh)
