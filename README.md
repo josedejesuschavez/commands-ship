@@ -26,6 +26,8 @@
 
 `sh $HOME/.commands-ship/install.sh`
 
+`dotbot -c $HOME/.commands-ship/configs/symlinks.yaml -d $HOME/.commands-ship`
+
 En varias ocasiones pedirá la contraseña del usuario administrador
 
 ## Pre-requisitos para uso en Debian
