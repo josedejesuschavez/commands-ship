@@ -1,8 +1,2 @@
-/commands/docker
-/commands/vim
-/commands/DDD
-/commands/python
-/commands/ElasticSearch
-/commands/shell
-/commands/git
-/commands_custom
+/ssh/*
+!/ssh/.keep
