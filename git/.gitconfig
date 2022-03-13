@@ -1,1 +1,5 @@
-
+[user]
+    name = Jose de Jesus Chavez
+    email = chavezjal06@hotmail.com
+[core]
+    excludesfile = $HOME/.gitignore_global
