@@ -1,0 +1,20 @@
+#!/bin/bash
+
+repoGit=${1}
+branch=${2}
+alias=${3}
+folder_commands="${HOME}/.commands"
+folder_clone_command="${folder_commands}/${alias}"
+
+if [ ! -d "${folder_commands}" ]; then
+    mkdir "${folder_commands}"
+fi
+
+if [ -d "${folder_clone_command}" ]; then
+    rf -rf "${folder_clone_command}"
+fi
+
+git clone ${repoGit} ${folder_clone_command}
+
+cd "${folder_clone_command}"
+git checkout "${branch}"
