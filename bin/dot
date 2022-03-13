@@ -53,7 +53,7 @@ function fzf_prompt() {
       fzf \
         --height 100% \
         --layout=reverse \
-        --preview 'cat $(find ${DOTFILES_PATH} -type f | grep $(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)/doc)' \
+        --preview 'cat $(find ${DOTFILES_PATH} -type f | grep $(echo {} | cut -d" " -f 1)/$(echo {} | cut -d" " -f 2)/doc) cat $(find ${HOME}/.commands/${1}/commands/${2}/doc) ' \
         --preview-window right:80
   )"
 
@@ -65,6 +65,11 @@ function fzf_prompt() {
   path_command_params=$(find ${DOTFILES_PATH} -type f | grep ${module}/${command}/params)
   path_command_script=$(find ${DOTFILES_PATH} -type f | grep ${module}/${command}/script)
   
+  if [ "${path_command_script}" = "" ]; then
+    path_command_params=$(find "${HOME}/.commands" -type f | grep ${module}/commands/${command}/params)
+    path_command_script=$(find "${HOME}/.commands" -type f | grep ${module}/commands/${command}/script)
+  fi
+
   args=""
 
   if [ ! "${command_selected}" = "" ]; then
@@ -137,7 +142,7 @@ function fzf_prompt() {
 
 list_scripts_path() {
   commands=$(find "${DOTFILES_PATH}/commands" -maxdepth 2 -mindepth 2 -type d | awk -F '/' '{print $6" "$7}')
-  commands_custom=$(find "${DOTFILES_PATH}/commands_custom" -maxdepth 2 -mindepth 2 -type d | awk -F '/' '{print $6" "$7}')
+  commands_custom=$(find "${HOME}/.commands" -maxdepth 3 -mindepth 3 -type d | awk -F "/" '{print $5" "$7}')
 
   printf "%s\n" "${commands}" | sort -u
   printf "%s\n" "${commands_custom}" | sort -u
