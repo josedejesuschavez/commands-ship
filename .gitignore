@@ -1,2 +1,3 @@
+/git/*
 /ssh/*
 !/ssh/.keep
