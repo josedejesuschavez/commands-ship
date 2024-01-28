@@ -9,7 +9,7 @@ if [ "${os}" = "Linux" ]; then
 
   sudo apt install -y build-essential procps curl file wget
   sudo apt install libsquashfuse0 squashfuse fuse
-  sudo apt install -y snapd
+  #sudo apt install -y snapd
   sudo chmod 755 /
 fi
 
